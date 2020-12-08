@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.beebank.monitor.dao.InterfaceRecordRecentDao">
+
+	<resultMap id="RM_InterfaceRecordRecent" type="com.beebank.monitor.entity.InterfaceRecordRecent">
+        <result property="id" column="ID"/>
+        <result property="branchid" column="BRANCHID"/>
+        <result property="ownref" column="OWNREF"/>
+        <result property="own" column="OWN"/>
+        <result property="requestmessage" column="REQUESTMESSAGE"/>
+        <result property="responsemessage" column="RESPONSEMESSAGE"/>
+        <result property="requesttime" column="REQUESTTIME"/>
+        <result property="status" column="STATUS"/>
+        <result property="rlevel" column="RLEVEL"/>
+        <result property="usetime" column="USETIME"/>
+        <result property="regdate" column="REGDATE"/>
+        <result property="transferdate" column="TRANSFERDATE"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	    <![CDATA[
+		ID,BRANCHID,OWNREF,OWN,REQUESTMESSAGE,RESPONSEMESSAGE,REQUESTTIME,STATUS,RLEVEL,USETIME,REGDATE,TRANSFERDATE
+	    ]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+	    <![CDATA[
+	        INSERT INTO INTERFACE_RECORD_RECENT ( 
+	        	ID ,
+	        	BRANCHID ,
+	        	OWNREF ,
+	        	OWN ,
+	        	REQUESTMESSAGE ,
+	        	RESPONSEMESSAGE ,
+	        	REQUESTTIME ,
+	        	STATUS ,
+	        	RLEVEL ,
+	        	USETIME ,
+	        	REGDATE ,
+	        	TRANSFERDATE 
+	        ) VALUES (
+	        	#{id} ,
+	        	#{branchid} ,
+	        	#{ownref} ,
+	        	#{own} ,
+	        	#{requestmessage} ,
+	        	#{responsemessage} ,
+	        	#{requesttime} ,
+	        	#{status} ,
+	        	#{rlevel} ,
+	        	#{usetime} ,
+	        	#{regdate} ,
+	        	#{transferdate} 
+	        )
+	    ]]>
+	</insert>
+	
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	    <![CDATA[
+	        INSERT INTO INTERFACE_RECORD_RECENT (
+	        		ID ,
+	        		BRANCHID ,
+	        		OWNREF ,
+	        		OWN ,
+	        		REQUESTMESSAGE ,
+	        		RESPONSEMESSAGE ,
+	        		REQUESTTIME ,
+	        		STATUS ,
+	        		RLEVEL ,
+	        		USETIME ,
+	        		REGDATE ,
+	        		TRANSFERDATE 
+	        ) VALUES 
+	         ]]>
+	        <foreach item="item" collection="list"   separator=",">
+	        	(
+					#{item.id} ,
+					#{item.branchid} ,
+					#{item.ownref} ,
+					#{item.own} ,
+					#{item.requestmessage} ,
+					#{item.responsemessage} ,
+					#{item.requesttime} ,
+					#{item.status} ,
+					#{item.rlevel} ,
+					#{item.usetime} ,
+					#{item.regdate} ,
+					#{item.transferdate} 
+	        	)
+			</foreach>
+	   
+	</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+		<set>
+			<if test="branchid != null and branchid != ''">
+				BRANCHID = #{branchid} ,
+			</if>
+			<if test="ownref != null and ownref != ''">
+				OWNREF = #{ownref} ,
+			</if>
+			<if test="own != null and own != ''">
+				OWN = #{own} ,
+			</if>
+			<if test="requestmessage != null and requestmessage != ''">
+				REQUESTMESSAGE = #{requestmessage} ,
+			</if>
+			<if test="responsemessage != null and responsemessage != ''">
+				RESPONSEMESSAGE = #{responsemessage} ,
+			</if>
+			<if test="requesttime != null">
+				REQUESTTIME = #{requesttime} ,
+			</if>
+			<if test="status != null and status != ''">
+				STATUS = #{status} ,
+			</if>
+			<if test="rlevel != null and rlevel != ''">
+				RLEVEL = #{rlevel} ,
+			</if>
+			<if test="usetime != null">
+				USETIME = #{usetime} ,
+			</if>
+			<if test="regdate != null">
+				REGDATE = #{regdate} ,
+			</if>
+			<if test="transferdate != null">
+				TRANSFERDATE = #{transferdate} 
+			</if>
+		</set>
+	</sql>
+	
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+		UPDATE INTERFACE_RECORD_RECENT
+		<include refid="update_sql" />
+		WHERE
+			ID = #{id} 	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+    	<![CDATA[
+        	DELETE FROM INTERFACE_RECORD_RECENT 
+        	WHERE
+        		ID = #{id} 
+    	]]>
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+        DELETE FROM INTERFACE_RECORD_RECENT 
+        WHERE ID IN 
+        <foreach item="ids" collection="list" open="(" separator="," close=")">
+			#{ids}
+		</foreach>
+    </delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_InterfaceRecordRecent">
+		SELECT
+		<include refid="columns" />
+		FROM INTERFACE_RECORD_RECENT
+		WHERE
+		ID = #{id} 
+	</select>
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{userName},'%')) -->
+	<sql id="findPage_where">
+		<where>
+				<if test="id != null">
+					AND ID = #{id}
+				</if>
+				<if test="branchid != null and branchid !=''">
+					AND BRANCHID = #{branchid}
+				</if>
+				<if test="ownref != null and ownref !=''">
+					AND OWNREF = #{ownref}
+				</if>
+				<if test="own != null and own !=''">
+					AND OWN = #{own}
+				</if>
+				<if test="requestmessage != null and requestmessage !=''">
+					AND REQUESTMESSAGE = #{requestmessage}
+				</if>
+				<if test="responsemessage != null and responsemessage !=''">
+					AND RESPONSEMESSAGE = #{responsemessage}
+				</if>
+				<if test="requesttimeBegin != null">
+					AND REQUESTTIME &gt;= #{requesttimeBegin}
+				</if>
+				<if test="requesttimeEnd != null">
+					AND REQUESTTIME &lt;= #{requesttimeEnd}
+				</if>
+				<if test="status != null and status !=''">
+					AND STATUS = #{status}
+				</if>
+				<if test="rlevel != null and rlevel !=''">
+					AND RLEVEL = #{rlevel}
+				</if>
+				<if test="usetime != null">
+					AND USETIME = #{usetime}
+				</if>
+				<if test="regdateBegin != null">
+					AND REGDATE &gt;= #{regdateBegin}
+				</if>
+				<if test="regdateEnd != null">
+					AND REGDATE &lt;= #{regdateEnd}
+				</if>
+				<if test="transferdateBegin != null">
+					AND TRANSFERDATE &gt;= #{transferdateBegin}
+				</if>
+				<if test="transferdateEnd != null">
+					AND TRANSFERDATE &lt;= #{transferdateEnd}
+				</if>
+		</where>
+	</sql>
+
+	<!-- 获取总数 -->
+	<select id="findPage_count" resultType="long">
+		SELECT COUNT(1)
+		FROM INTERFACE_RECORD_RECENT
+		<include refid="findPage_where" />
+	</select>
+
+	<select id="listByObj" resultMap="RM_InterfaceRecordRecent" parameterType="com.beebank.monitor.entity.InterfaceRecordRecent">
+		SELECT
+		<include refid="columns" />
+		FROM ON_OFF
+		<include refid="findPage_where" />
+	</select>
+</mapper>

@@ -1,0 +1,64 @@
+server:
+  port: 8081
+  tomcat:
+    max-threads: 1000
+    uri-encoding: utf-8
+    accept-count: 7000
+    max-connections: -1
+    connection-timeout: 60000
+    min-spare-threads: 10
+
+spring:
+  application:
+    name: risk-monitor
+  profiles:
+    active: test
+  mvc:
+    servlet:
+      load-on-startup: 1
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+logging:
+  config: classpath:logback.xml
+
+
+riskMonitorThread:
+  #核心线程数，为 -1时使用默认值
+  core-pool-size: 100
+  #最大线程数
+  max-pool-size: 400
+  #线程名称前缀
+  thread-name-prefix: riskMonitorDefaultThread--
+  #非核心线程存活时间
+  keep-alive-seconds: 60
+  #线程池队列
+  quence-capacity: 10000
+  #是否允许核心线程过期（默认不允许核心线程过期）
+  allow-core-thread-timeout: false
+
+soap:
+  dir: soap
+  blackList: blackList
+  returnSoap: returnSoap
+  MSG: MSG
+  subfix: .soap
+  inJar: true
+
+schedule:
+  task:
+    #定时执行时间，暂时不起作用
+    cron: 0 30 3 * * ?
+    #ip末尾
+    ip_suffix: 19
+    #单次休眠时间
+    sleepTime: 30
+    #最大休眠时间
+    maxTime: 1800
+company:
+  person:
+    own: NEBE
+    count: 3000
+
+
+

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.TaskRecordDao">
+
+	<resultMap id="RM_TaskRecord" type="com.beebank.monitor.entity.TaskRecord">
+		<result property="id" column="ID"/>
+		<result property="taskName" column="TASK_NAME"/>
+		<result property="taskDate" column="TASK_DATE"/>
+		<result property="status" column="STATUS"/>
+		<result property="statusName" column="STATUS_NAME"/>
+		<result property="regTime" column="REG_TIME"/>
+		<result property="updateTime" column="UPDATE_TIME"/>
+		<result property="remark" column="REMARK"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			ID,TASK_NAME,TASK_DATE,STATUS,STATUS_NAME,REG_TIME,UPDATE_TIME,REMARK
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+
+		<![CDATA[
+				INSERT INTO TASK_RECORD (
+
+					TASK_NAME ,
+					TASK_DATE ,
+					STATUS ,
+					STATUS_NAME ,
+					UPDATE_TIME ,
+					REMARK 
+				) VALUES (
+
+					#{taskName} ,
+					#{taskDate} ,
+					#{status} ,
+					#{statusName} ,
+					#{updateTime} ,
+					#{remark} 
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO TASK_RECORD (
+						TASK_NAME ,
+						TASK_DATE ,
+						STATUS ,
+						STATUS_NAME ,
+						UPDATE_TIME ,
+						REMARK 
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.taskName} ,
+		#{item.taskDate} ,
+	#{item.status} ,
+	#{item.statusName} ,
+		#{item.updateTime} ,
+	#{item.remark} 
+			)
+			</foreach>
+
+			</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="taskName != null and taskName != ''">
+	TASK_NAME = #{taskName} ,
+			</if>
+		<if test="taskDate != null">
+			TASK_DATE = #{taskDate} ,
+	</if>
+	<if test="status != null and status != ''">
+	STATUS = #{status} ,
+			</if>
+	<if test="statusName != null and statusName != ''">
+	STATUS_NAME = #{statusName} ,
+			</if>
+		<if test="regTime != null">
+			REG_TIME = #{regTime} ,
+	</if>
+		<if test="updateTime != null">
+			UPDATE_TIME = #{updateTime} ,
+	</if>
+	<if test="remark != null and remark != ''">
+	REMARK = #{remark} 
+			</if>
+			</set>
+			</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE TASK_RECORD
+	<include refid="update_sql" />
+	WHERE
+	ID = #{id} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE TASK_RECORD
+	<include refid="update_sql" />
+		WHERE
+	ID IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM TASK_RECORD
+				WHERE
+					ID = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM TASK_RECORD
+		WHERE ID IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_TaskRecord">
+		SELECT
+	<include refid="columns" />
+		FROM TASK_RECORD
+		WHERE
+		ID = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+		<if test="id != null">
+			AND ID = #{id}
+		</if>
+	<if test="taskName != null and taskName !=''">
+		AND TASK_NAME = #{taskName}
+	</if>
+		<if test="taskDate != null">
+			AND TASK_DATE = #{taskDate}
+		</if>
+	<if test="status != null and status !=''">
+		AND STATUS = #{status}
+	</if>
+	<if test="statusName != null and statusName !=''">
+		AND STATUS_NAME = #{statusName}
+	</if>
+		<if test="regTime != null">
+			AND REG_TIME = #{regTime}
+		</if>
+		<if test="updateTime != null">
+			AND UPDATE_TIME = #{updateTime}
+		</if>
+	<if test="remark != null and remark !=''">
+		AND REMARK = #{remark}
+	</if>
+			</where>
+			</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_TaskRecord" parameterType="com.beebank.monitor.entity.TaskRecord">
+		SELECT
+		<include refid="columns" />
+		FROM TASK_RECORD
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM TASK_RECORD
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_TaskRecord" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM TASK_RECORD
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<update id="updateByNameAndDate" parameterType="com.beebank.monitor.entity.TaskRecord">
+		UPDATE TASK_RECORD
+		<include refid="update_sql" />
+		WHERE
+		TASK_NAME = #{taskName} and  TASK_DATE = #{taskDate}
+	</update>
+</mapper>

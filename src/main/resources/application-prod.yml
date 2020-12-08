@@ -1,0 +1,64 @@
+server:
+  port: 8081
+  tomcat:
+    max-threads: 1000
+    uri-encoding: utf-8
+    accept-count: 7000
+    max-connections: -1
+    connection-timeout: 60000
+    min-spare-threads: 10
+
+monitor:
+  publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIvIqyGXAQyIbO2OYqvL/upV12laN4EUxW9V5FtVwmvrEj3j/LMVBg8w2qZo1kRVSioQsqA6n65KBiKYCQqtP/UCAwEAAQ==
+
+spring:
+  application:
+    name: risk-monitor
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.ibm.db2.jcc.DB2Driver
+#    域名访问
+    url: jdbc:db2://db.riskmoni.hrbb.com:50001/monitor
+    #prod
+    username: fxjcqdzh
+    password: B558gEokKplSOOA22YgeI6vwKDv0Y+QE8mVE0/CgPk1sAUBvJjwm2hmm+ahT5iFihQSrDSTAlpR2NfHboWErcw==
+    druid:
+      filters: config
+      connection-properties: config.decrypt=true;config.decrypt.key=${monitor.publicKey}
+  mvc:
+    servlet:
+      load-on-startup: 1
+
+mybatis:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+logging:
+  config: classpath:logback.xml
+blackList:
+  #生产环境ESB
+  url: http://35.10.5.125
+  port: 10200
+  timeOut: 400
+  charset: GB18030
+
+riskMonitorThread:
+  #核心线程数，为 -1时使用默认值
+  core-pool-size: 100
+  #最大线程数
+  max-pool-size: 400
+  #线程名称前缀
+  thread-name-prefix: riskMonitorDefaultThread--
+  #非核心线程存活时间
+  keep-alive-seconds: 60
+  #线程池队列
+  quence-capacity: 10000
+  #是否允许核心线程过期（默认不允许核心线程过期）
+  allow-core-thread-timeout: false
+
+soap:
+  dir: soap
+  blackList: blackList
+  returnSoap: returnSoap
+  MSG: MSG
+  subfix: .soap
+  inJar: true
+

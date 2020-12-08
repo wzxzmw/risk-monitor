@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.BcsCusvd4Dao">
+
+	<resultMap id="RM_BcsCusvd4" type="com.beebank.monitor.entity.BcsCusvd4">
+		<result property="code" column="CODE"/>
+		<result property="deli" column="DELI"/>
+		<result property="instNo" column="INST_NO"/>
+		<result property="custNo" column="CUST_NO"/>
+		<result property="recno" column="RECNO"/>
+		<result property="contact1" column="CONTACT_1"/>
+		<result property="title1" column="TITLE_1"/>
+		<result property="contact2" column="CONTACT_2"/>
+		<result property="title2" column="TITLE_2"/>
+		<result property="companyNo" column="COMPANY_NO"/>
+		<result property="businessNo" column="BUSINESS_NO"/>
+		<result property="licenceNo" column="LICENCE_NO"/>
+		<result property="bossIdType" column="BOSS_ID_TYPE"/>
+		<result property="bossIdNo" column="BOSS_ID_NO"/>
+		<result property="bossName" column="BOSS_NAME"/>
+		<result property="bossBday" column="BOSS_BDAY"/>
+		<result property="busRgstrDate" column="BUS_RGSTR_DATE"/>
+		<result property="capitalAmt" column="CAPITAL_AMT"/>
+		<result property="stckIssueStat" column="STCK_ISSUE_STAT"/>
+		<result property="busAddr1" column="BUS_ADDR_1"/>
+		<result property="legName" column="LEG_NAME"/>
+		<result property="legInd" column="LEG_IND"/>
+		<result property="legExpdt" column="LEG_EXPDT"/>
+		<result property="filler" column="FILLER"/>
+		<result property="countryCode" column="COUNTRY_CODE"/>
+		<result property="contactRel1" column="CONTACT_REL_1"/>
+		<result property="phoneNo1" column="PHONE_NO_1"/>
+		<result property="contactRel2" column="CONTACT_REL_2"/>
+		<result property="phoneNo2" column="PHONE_NO_2"/>
+		<result property="lstMntDate" column="LST_MNT_DATE"/>
+		<result property="lstMntTell" column="LST_MNT_TELL"/>
+		<result property="lstMntBrNo" column="LST_MNT_BR_NO"/>
+		<result property="loaCardNo" column="LOA_CARD_NO"/>
+		<result property="lnAnnAudit" column="LN_ANN_AUDIT"/>
+		<result property="fxLimCurrent" column="FX_LIM_CURRENT"/>
+		<result property="fxCurrCurrent" column="FX_CURR_CURRENT"/>
+		<result property="fxLimCapital" column="FX_LIM_CAPITAL"/>
+		<result property="fxCurrCapital" column="FX_CURR_CAPITAL"/>
+		<result property="registryDate" column="REGISTRY_DATE"/>
+		<result property="registryCurr" column="REGISTRY_CURR"/>
+		<result property="restrictIndstry" column="RESTRICT_INDSTRY"/>
+		<result property="expiryDate" column="EXPIRY_DATE"/>
+		<result property="relationBoc" column="RELATION_BOC"/>
+		<result property="shareBoc" column="SHARE_BOC"/>
+		<result property="bocRiskCompany" column="BOC_RISK_COMPANY"/>
+		<result property="onStockMarket" column="ON_STOCK_MARKET"/>
+		<result property="ceoIdType" column="CEO_ID_TYPE"/>
+		<result property="ceoIdNo" column="CEO_ID_NO"/>
+		<result property="businessScope" column="BUSINESS_SCOPE"/>
+		<result property="capRecv" column="CAP_RECV"/>
+		<result property="capRecvAprvDt" column="CAP_RECV_APRV_DT"/>
+		<result property="capRecvYear" column="CAP_RECV_YEAR"/>
+		<result property="fxUtilCurrent" column="FX_UTIL_CURRENT"/>
+		<result property="fxUtilCapital" column="FX_UTIL_CAPITAL"/>
+		<result property="fxLimExceedDt" column="FX_LIM_EXCEED_DT"/>
+		<result property="busOwsp" column="BUS_OWSP"/>
+		<result property="ecnmCode" column="ECNM_CODE"/>
+		<result property="contact1mail" column="CONTACT_1_MAIL"/>
+		<result property="netAsset" column="NET_ASSET"/>
+		<result property="creditLine" column="CREDIT_LINE"/>
+		<result property="indCrPolicy" column="IND_CR_POLICY"/>
+		<result property="asoBoc" column="ASO_BOC"/>
+		<result property="fundCentralGov" column="FUND_CENTRAL_GOV"/>
+		<result property="unpaidBal" column="UNPAID_BAL"/>
+		<result property="ylyRpmt" column="YLY_RPMT"/>
+		<result property="remarkInf" column="REMARK_INF"/>
+		<result property="assetLiabRatio" column="ASSET_LIAB_RATIO"/>
+		<result property="cooprtStrtDate" column="COOPRT_STRT_DATE"/>
+		<result property="buildOwnRent" column="BUILD_OWN_RENT"/>
+		<result property="depLonRatio" column="DEP_LON_RATIO"/>
+		<result property="saleIncrRate" column="SALE_INCR_RATE"/>
+		<result property="prftIncrRate" column="PRFT_INCR_RATE"/>
+		<result property="floatAssetRati" column="FLOAT_ASSET_RATI"/>
+		<result property="salePrftRate" column="SALE_PRFT_RATE"/>
+		<result property="netAssetRate" column="NET_ASSET_RATE"/>
+		<result property="incomeTaxRate" column="INCOME_TAX_RATE"/>
+		<result property="trsAcct" column="TRS_ACCT"/>
+		<result property="lastAuditDate" column="LAST_AUDIT_DATE"/>
+		<result property="othrBusScop" column="OTHR_BUS_SCOP"/>
+		<result property="issuQualEnty" column="ISSU_QUAL_ENTY"/>
+		<result property="profNo" column="PROF_NO"/>
+		<result property="cmptncyRate" column="CMPTNCY_RATE"/>
+		<result property="hgstCredit" column="HGST_CREDIT"/>
+		<result property="hgstPrct" column="HGST_PRCT"/>
+		<result property="lgstTerm" column="LGST_TERM"/>
+		<result property="avalCreditLmt" column="AVAL_CREDIT_LMT"/>
+		<result property="tradTerm" column="TRAD_TERM"/>
+		<result property="basicAcctBank" column="BASIC_ACCT_BANK"/>
+		<result property="basicAcctNo" column="BASIC_ACCT_NO"/>
+		<result property="createYear" column="CREATE_YEAR"/>
+		<result property="empNum" column="EMP_NUM"/>
+		<result property="stockCode1" column="STOCK_CODE1"/>
+		<result property="stockExchList1" column="STOCK_EXCH_LIST1"/>
+		<result property="stockCode2" column="STOCK_CODE2"/>
+		<result property="stockExchList2" column="STOCK_EXCH_LIST2"/>
+		<result property="stockCode3" column="STOCK_CODE3"/>
+		<result property="stockExchList3" column="STOCK_EXCH_LIST3"/>
+		<result property="aprvName1" column="APRV_NAME1"/>
+		<result property="aprvFixNo1" column="APRV_FIX_NO1"/>
+		<result property="aprvMobile1" column="APRV_MOBILE1"/>
+		<result property="aprvName2" column="APRV_NAME2"/>
+		<result property="aprvFixNo2" column="APRV_FIX_NO2"/>
+		<result property="aprvMobile2" column="APRV_MOBILE2"/>
+		<result property="fxAppLimit" column="FX_APP_LIMIT"/>
+		<result property="fxCurrency" column="FX_CURRENCY"/>
+		<result property="fxResdLimit" column="FX_RESD_LIMIT"/>
+		<result property="fxApprovalNo" column="FX_APPROVAL_NO"/>
+		<result property="fxLimtExpDt" column="FX_LIMT_EXP_DT"/>
+		<result property="fxLimitUsed" column="FX_LIMIT_USED"/>
+		<result property="bossInd" column="BOSS_IND"/>
+		<result property="bossExpiryDate" column="BOSS_EXPIRY_DATE"/>
+		<result property="bossPhone" column="BOSS_PHONE"/>
+		<result property="areaCode" column="AREA_CODE"/>
+		<result property="businessScope1" column="BUSINESS_SCOPE_1"/>
+		<result property="businessScope2" column="BUSINESS_SCOPE_2"/>
+		<result property="businessScope3" column="BUSINESS_SCOPE_3"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			CODE,DELI,INST_NO,CUST_NO,RECNO,CONTACT_1,TITLE_1,CONTACT_2,TITLE_2,COMPANY_NO,BUSINESS_NO,LICENCE_NO,BOSS_ID_TYPE,BOSS_ID_NO,BOSS_NAME,BOSS_BDAY,BUS_RGSTR_DATE,CAPITAL_AMT,STCK_ISSUE_STAT,BUS_ADDR_1,LEG_NAME,LEG_IND,LEG_EXPDT,FILLER,COUNTRY_CODE,CONTACT_REL_1,PHONE_NO_1,CONTACT_REL_2,PHONE_NO_2,LST_MNT_DATE,LST_MNT_TELL,LST_MNT_BR_NO,LOA_CARD_NO,LN_ANN_AUDIT,FX_LIM_CURRENT,FX_CURR_CURRENT,FX_LIM_CAPITAL,FX_CURR_CAPITAL,REGISTRY_DATE,REGISTRY_CURR,RESTRICT_INDSTRY,EXPIRY_DATE,RELATION_BOC,SHARE_BOC,BOC_RISK_COMPANY,ON_STOCK_MARKET,CEO_ID_TYPE,CEO_ID_NO,BUSINESS_SCOPE,CAP_RECV,CAP_RECV_APRV_DT,CAP_RECV_YEAR,FX_UTIL_CURRENT,FX_UTIL_CAPITAL,FX_LIM_EXCEED_DT,BUS_OWSP,ECNM_CODE,CONTACT_1_MAIL,NET_ASSET,CREDIT_LINE,IND_CR_POLICY,ASO_BOC,FUND_CENTRAL_GOV,UNPAID_BAL,YLY_RPMT,REMARK_INF,ASSET_LIAB_RATIO,COOPRT_STRT_DATE,BUILD_OWN_RENT,DEP_LON_RATIO,SALE_INCR_RATE,PRFT_INCR_RATE,FLOAT_ASSET_RATI,SALE_PRFT_RATE,NET_ASSET_RATE,INCOME_TAX_RATE,TRS_ACCT,LAST_AUDIT_DATE,OTHR_BUS_SCOP,ISSU_QUAL_ENTY,PROF_NO,CMPTNCY_RATE,HGST_CREDIT,HGST_PRCT,LGST_TERM,AVAL_CREDIT_LMT,TRAD_TERM,BASIC_ACCT_BANK,BASIC_ACCT_NO,CREATE_YEAR,EMP_NUM,STOCK_CODE1,STOCK_EXCH_LIST1,STOCK_CODE2,STOCK_EXCH_LIST2,STOCK_CODE3,STOCK_EXCH_LIST3,APRV_NAME1,APRV_FIX_NO1,APRV_MOBILE1,APRV_NAME2,APRV_FIX_NO2,APRV_MOBILE2,FX_APP_LIMIT,FX_CURRENCY,FX_RESD_LIMIT,FX_APPROVAL_NO,FX_LIMT_EXP_DT,FX_LIMIT_USED,BOSS_IND,BOSS_EXPIRY_DATE,BOSS_PHONE,AREA_CODE,BUSINESS_SCOPE_1,BUSINESS_SCOPE_2,BUSINESS_SCOPE_3
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="instNo">
+	<![CDATA[
+				INSERT INTO BCS_CUSVD4 (
+					CODE ,
+					DELI ,
+					INST_NO ,
+					CUST_NO ,
+					RECNO ,
+					CONTACT_1 ,
+					TITLE_1 ,
+					CONTACT_2 ,
+					TITLE_2 ,
+					COMPANY_NO ,
+					BUSINESS_NO ,
+					LICENCE_NO ,
+					BOSS_ID_TYPE ,
+					BOSS_ID_NO ,
+					BOSS_NAME ,
+					BOSS_BDAY ,
+					BUS_RGSTR_DATE ,
+					CAPITAL_AMT ,
+					STCK_ISSUE_STAT ,
+					BUS_ADDR_1 ,
+					LEG_NAME ,
+					LEG_IND ,
+					LEG_EXPDT ,
+					FILLER ,
+					COUNTRY_CODE ,
+					CONTACT_REL_1 ,
+					PHONE_NO_1 ,
+					CONTACT_REL_2 ,
+					PHONE_NO_2 ,
+					LST_MNT_DATE ,
+					LST_MNT_TELL ,
+					LST_MNT_BR_NO ,
+					LOA_CARD_NO ,
+					LN_ANN_AUDIT ,
+					FX_LIM_CURRENT ,
+					FX_CURR_CURRENT ,
+					FX_LIM_CAPITAL ,
+					FX_CURR_CAPITAL ,
+					REGISTRY_DATE ,
+					REGISTRY_CURR ,
+					RESTRICT_INDSTRY ,
+					EXPIRY_DATE ,
+					RELATION_BOC ,
+					SHARE_BOC ,
+					BOC_RISK_COMPANY ,
+					ON_STOCK_MARKET ,
+					CEO_ID_TYPE ,
+					CEO_ID_NO ,
+					BUSINESS_SCOPE ,
+					CAP_RECV ,
+					CAP_RECV_APRV_DT ,
+					CAP_RECV_YEAR ,
+					FX_UTIL_CURRENT ,
+					FX_UTIL_CAPITAL ,
+					FX_LIM_EXCEED_DT ,
+					BUS_OWSP ,
+					ECNM_CODE ,
+					CONTACT_1_MAIL ,
+					NET_ASSET ,
+					CREDIT_LINE ,
+					IND_CR_POLICY ,
+					ASO_BOC ,
+					FUND_CENTRAL_GOV ,
+					UNPAID_BAL ,
+					YLY_RPMT ,
+					REMARK_INF ,
+					ASSET_LIAB_RATIO ,
+					COOPRT_STRT_DATE ,
+					BUILD_OWN_RENT ,
+					DEP_LON_RATIO ,
+					SALE_INCR_RATE ,
+					PRFT_INCR_RATE ,
+					FLOAT_ASSET_RATI ,
+					SALE_PRFT_RATE ,
+					NET_ASSET_RATE ,
+					INCOME_TAX_RATE ,
+					TRS_ACCT ,
+					LAST_AUDIT_DATE ,
+					OTHR_BUS_SCOP ,
+					ISSU_QUAL_ENTY ,
+					PROF_NO ,
+					CMPTNCY_RATE ,
+					HGST_CREDIT ,
+					HGST_PRCT ,
+					LGST_TERM ,
+					AVAL_CREDIT_LMT ,
+					TRAD_TERM ,
+					BASIC_ACCT_BANK ,
+					BASIC_ACCT_NO ,
+					CREATE_YEAR ,
+					EMP_NUM ,
+					STOCK_CODE1 ,
+					STOCK_EXCH_LIST1 ,
+					STOCK_CODE2 ,
+					STOCK_EXCH_LIST2 ,
+					STOCK_CODE3 ,
+					STOCK_EXCH_LIST3 ,
+					APRV_NAME1 ,
+					APRV_FIX_NO1 ,
+					APRV_MOBILE1 ,
+					APRV_NAME2 ,
+					APRV_FIX_NO2 ,
+					APRV_MOBILE2 ,
+					FX_APP_LIMIT ,
+					FX_CURRENCY ,
+					FX_RESD_LIMIT ,
+					FX_APPROVAL_NO ,
+					FX_LIMT_EXP_DT ,
+					FX_LIMIT_USED ,
+					BOSS_IND ,
+					BOSS_EXPIRY_DATE ,
+					BOSS_PHONE ,
+					AREA_CODE ,
+					BUSINESS_SCOPE_1 ,
+					BUSINESS_SCOPE_2 ,
+					BUSINESS_SCOPE_3 
+				) VALUES (
+					#{code} ,
+					#{deli} ,
+					#{instNo} ,
+					#{custNo} ,
+					#{recno} ,
+					#{contact1} ,
+					#{title1} ,
+					#{contact2} ,
+					#{title2} ,
+					#{companyNo} ,
+					#{businessNo} ,
+					#{licenceNo} ,
+					#{bossIdType} ,
+					#{bossIdNo} ,
+					#{bossName} ,
+					#{bossBday} ,
+					#{busRgstrDate} ,
+					#{capitalAmt} ,
+					#{stckIssueStat} ,
+					#{busAddr1} ,
+					#{legName} ,
+					#{legInd} ,
+					#{legExpdt} ,
+					#{filler} ,
+					#{countryCode} ,
+					#{contactRel1} ,
+					#{phoneNo1} ,
+					#{contactRel2} ,
+					#{phoneNo2} ,
+					#{lstMntDate} ,
+					#{lstMntTell} ,
+					#{lstMntBrNo} ,
+					#{loaCardNo} ,
+					#{lnAnnAudit} ,
+					#{fxLimCurrent} ,
+					#{fxCurrCurrent} ,
+					#{fxLimCapital} ,
+					#{fxCurrCapital} ,
+					#{registryDate} ,
+					#{registryCurr} ,
+					#{restrictIndstry} ,
+					#{expiryDate} ,
+					#{relationBoc} ,
+					#{shareBoc} ,
+					#{bocRiskCompany} ,
+					#{onStockMarket} ,
+					#{ceoIdType} ,
+					#{ceoIdNo} ,
+					#{businessScope} ,
+					#{capRecv} ,
+					#{capRecvAprvDt} ,
+					#{capRecvYear} ,
+					#{fxUtilCurrent} ,
+					#{fxUtilCapital} ,
+					#{fxLimExceedDt} ,
+					#{busOwsp} ,
+					#{ecnmCode} ,
+					#{contact1mail} ,
+					#{netAsset} ,
+					#{creditLine} ,
+					#{indCrPolicy} ,
+					#{asoBoc} ,
+					#{fundCentralGov} ,
+					#{unpaidBal} ,
+					#{ylyRpmt} ,
+					#{remarkInf} ,
+					#{assetLiabRatio} ,
+					#{cooprtStrtDate} ,
+					#{buildOwnRent} ,
+					#{depLonRatio} ,
+					#{saleIncrRate} ,
+					#{prftIncrRate} ,
+					#{floatAssetRati} ,
+					#{salePrftRate} ,
+					#{netAssetRate} ,
+					#{incomeTaxRate} ,
+					#{trsAcct} ,
+					#{lastAuditDate} ,
+					#{othrBusScop} ,
+					#{issuQualEnty} ,
+					#{profNo} ,
+					#{cmptncyRate} ,
+					#{hgstCredit} ,
+					#{hgstPrct} ,
+					#{lgstTerm} ,
+					#{avalCreditLmt} ,
+					#{tradTerm} ,
+					#{basicAcctBank} ,
+					#{basicAcctNo} ,
+					#{createYear} ,
+					#{empNum} ,
+					#{stockCode1} ,
+					#{stockExchList1} ,
+					#{stockCode2} ,
+					#{stockExchList2} ,
+					#{stockCode3} ,
+					#{stockExchList3} ,
+					#{aprvName1} ,
+					#{aprvFixNo1} ,
+					#{aprvMobile1} ,
+					#{aprvName2} ,
+					#{aprvFixNo2} ,
+					#{aprvMobile2} ,
+					#{fxAppLimit} ,
+					#{fxCurrency} ,
+					#{fxResdLimit} ,
+					#{fxApprovalNo} ,
+					#{fxLimtExpDt} ,
+					#{fxLimitUsed} ,
+					#{bossInd} ,
+					#{bossExpiryDate} ,
+					#{bossPhone} ,
+					#{areaCode} ,
+					#{businessScope1} ,
+					#{businessScope2} ,
+					#{businessScope3} 
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO BCS_CUSVD4 (
+						CODE ,
+						DELI ,
+						INST_NO ,
+						CUST_NO ,
+						RECNO ,
+						CONTACT_1 ,
+						TITLE_1 ,
+						CONTACT_2 ,
+						TITLE_2 ,
+						COMPANY_NO ,
+						BUSINESS_NO ,
+						LICENCE_NO ,
+						BOSS_ID_TYPE ,
+						BOSS_ID_NO ,
+						BOSS_NAME ,
+						BOSS_BDAY ,
+						BUS_RGSTR_DATE ,
+						CAPITAL_AMT ,
+						STCK_ISSUE_STAT ,
+						BUS_ADDR_1 ,
+						LEG_NAME ,
+						LEG_IND ,
+						LEG_EXPDT ,
+						FILLER ,
+						COUNTRY_CODE ,
+						CONTACT_REL_1 ,
+						PHONE_NO_1 ,
+						CONTACT_REL_2 ,
+						PHONE_NO_2 ,
+						LST_MNT_DATE ,
+						LST_MNT_TELL ,
+						LST_MNT_BR_NO ,
+						LOA_CARD_NO ,
+						LN_ANN_AUDIT ,
+						FX_LIM_CURRENT ,
+						FX_CURR_CURRENT ,
+						FX_LIM_CAPITAL ,
+						FX_CURR_CAPITAL ,
+						REGISTRY_DATE ,
+						REGISTRY_CURR ,
+						RESTRICT_INDSTRY ,
+						EXPIRY_DATE ,
+						RELATION_BOC ,
+						SHARE_BOC ,
+						BOC_RISK_COMPANY ,
+						ON_STOCK_MARKET ,
+						CEO_ID_TYPE ,
+						CEO_ID_NO ,
+						BUSINESS_SCOPE ,
+						CAP_RECV ,
+						CAP_RECV_APRV_DT ,
+						CAP_RECV_YEAR ,
+						FX_UTIL_CURRENT ,
+						FX_UTIL_CAPITAL ,
+						FX_LIM_EXCEED_DT ,
+						BUS_OWSP ,
+						ECNM_CODE ,
+						CONTACT_1_MAIL ,
+						NET_ASSET ,
+						CREDIT_LINE ,
+						IND_CR_POLICY ,
+						ASO_BOC ,
+						FUND_CENTRAL_GOV ,
+						UNPAID_BAL ,
+						YLY_RPMT ,
+						REMARK_INF ,
+						ASSET_LIAB_RATIO ,
+						COOPRT_STRT_DATE ,
+						BUILD_OWN_RENT ,
+						DEP_LON_RATIO ,
+						SALE_INCR_RATE ,
+						PRFT_INCR_RATE ,
+						FLOAT_ASSET_RATI ,
+						SALE_PRFT_RATE ,
+						NET_ASSET_RATE ,
+						INCOME_TAX_RATE ,
+						TRS_ACCT ,
+						LAST_AUDIT_DATE ,
+						OTHR_BUS_SCOP ,
+						ISSU_QUAL_ENTY ,
+						PROF_NO ,
+						CMPTNCY_RATE ,
+						HGST_CREDIT ,
+						HGST_PRCT ,
+						LGST_TERM ,
+						AVAL_CREDIT_LMT ,
+						TRAD_TERM ,
+						BASIC_ACCT_BANK ,
+						BASIC_ACCT_NO ,
+						CREATE_YEAR ,
+						EMP_NUM ,
+						STOCK_CODE1 ,
+						STOCK_EXCH_LIST1 ,
+						STOCK_CODE2 ,
+						STOCK_EXCH_LIST2 ,
+						STOCK_CODE3 ,
+						STOCK_EXCH_LIST3 ,
+						APRV_NAME1 ,
+						APRV_FIX_NO1 ,
+						APRV_MOBILE1 ,
+						APRV_NAME2 ,
+						APRV_FIX_NO2 ,
+						APRV_MOBILE2 ,
+						FX_APP_LIMIT ,
+						FX_CURRENCY ,
+						FX_RESD_LIMIT ,
+						FX_APPROVAL_NO ,
+						FX_LIMT_EXP_DT ,
+						FX_LIMIT_USED ,
+						BOSS_IND ,
+						BOSS_EXPIRY_DATE ,
+						BOSS_PHONE ,
+						AREA_CODE ,
+						BUSINESS_SCOPE_1 ,
+						BUSINESS_SCOPE_2 ,
+						BUSINESS_SCOPE_3 
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.code} ,
+	#{item.deli} ,
+	#{item.instNo} ,
+	#{item.custNo} ,
+	#{item.recno} ,
+	#{item.contact1} ,
+	#{item.title1} ,
+	#{item.contact2} ,
+	#{item.title2} ,
+	#{item.companyNo} ,
+	#{item.businessNo} ,
+	#{item.licenceNo} ,
+	#{item.bossIdType} ,
+	#{item.bossIdNo} ,
+	#{item.bossName} ,
+	#{item.bossBday} ,
+	#{item.busRgstrDate} ,
+	#{item.capitalAmt} ,
+	#{item.stckIssueStat} ,
+	#{item.busAddr1} ,
+	#{item.legName} ,
+	#{item.legInd} ,
+	#{item.legExpdt} ,
+	#{item.filler} ,
+	#{item.countryCode} ,
+	#{item.contactRel1} ,
+	#{item.phoneNo1} ,
+	#{item.contactRel2} ,
+	#{item.phoneNo2} ,
+	#{item.lstMntDate} ,
+	#{item.lstMntTell} ,
+	#{item.lstMntBrNo} ,
+	#{item.loaCardNo} ,
+	#{item.lnAnnAudit} ,
+	#{item.fxLimCurrent} ,
+	#{item.fxCurrCurrent} ,
+	#{item.fxLimCapital} ,
+	#{item.fxCurrCapital} ,
+	#{item.registryDate} ,
+	#{item.registryCurr} ,
+	#{item.restrictIndstry} ,
+	#{item.expiryDate} ,
+	#{item.relationBoc} ,
+	#{item.shareBoc} ,
+	#{item.bocRiskCompany} ,
+	#{item.onStockMarket} ,
+	#{item.ceoIdType} ,
+	#{item.ceoIdNo} ,
+	#{item.businessScope} ,
+	#{item.capRecv} ,
+	#{item.capRecvAprvDt} ,
+	#{item.capRecvYear} ,
+	#{item.fxUtilCurrent} ,
+	#{item.fxUtilCapital} ,
+	#{item.fxLimExceedDt} ,
+	#{item.busOwsp} ,
+	#{item.ecnmCode} ,
+	#{item.contact1mail} ,
+	#{item.netAsset} ,
+	#{item.creditLine} ,
+	#{item.indCrPolicy} ,
+	#{item.asoBoc} ,
+	#{item.fundCentralGov} ,
+	#{item.unpaidBal} ,
+	#{item.ylyRpmt} ,
+	#{item.remarkInf} ,
+	#{item.assetLiabRatio} ,
+	#{item.cooprtStrtDate} ,
+	#{item.buildOwnRent} ,
+	#{item.depLonRatio} ,
+	#{item.saleIncrRate} ,
+	#{item.prftIncrRate} ,
+	#{item.floatAssetRati} ,
+	#{item.salePrftRate} ,
+	#{item.netAssetRate} ,
+	#{item.incomeTaxRate} ,
+	#{item.trsAcct} ,
+	#{item.lastAuditDate} ,
+	#{item.othrBusScop} ,
+	#{item.issuQualEnty} ,
+	#{item.profNo} ,
+	#{item.cmptncyRate} ,
+	#{item.hgstCredit} ,
+	#{item.hgstPrct} ,
+	#{item.lgstTerm} ,
+	#{item.avalCreditLmt} ,
+	#{item.tradTerm} ,
+	#{item.basicAcctBank} ,
+	#{item.basicAcctNo} ,
+	#{item.createYear} ,
+	#{item.empNum} ,
+	#{item.stockCode1} ,
+	#{item.stockExchList1} ,
+	#{item.stockCode2} ,
+	#{item.stockExchList2} ,
+	#{item.stockCode3} ,
+	#{item.stockExchList3} ,
+	#{item.aprvName1} ,
+	#{item.aprvFixNo1} ,
+	#{item.aprvMobile1} ,
+	#{item.aprvName2} ,
+	#{item.aprvFixNo2} ,
+	#{item.aprvMobile2} ,
+	#{item.fxAppLimit} ,
+	#{item.fxCurrency} ,
+	#{item.fxResdLimit} ,
+	#{item.fxApprovalNo} ,
+	#{item.fxLimtExpDt} ,
+	#{item.fxLimitUsed} ,
+	#{item.bossInd} ,
+	#{item.bossExpiryDate} ,
+	#{item.bossPhone} ,
+	#{item.areaCode} ,
+	#{item.businessScope1} ,
+	#{item.businessScope2} ,
+	#{item.businessScope3} 
+			)
+			</foreach>
+
+			</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="code != null and code != ''">
+	CODE = #{code} ,
+			</if>
+	<if test="deli != null and deli != ''">
+	DELI = #{deli} ,
+			</if>
+	<if test="contact1 != null and contact1 != ''">
+	CONTACT_1 = #{contact1} ,
+			</if>
+	<if test="title1 != null and title1 != ''">
+	TITLE_1 = #{title1} ,
+			</if>
+	<if test="contact2 != null and contact2 != ''">
+	CONTACT_2 = #{contact2} ,
+			</if>
+	<if test="title2 != null and title2 != ''">
+	TITLE_2 = #{title2} ,
+			</if>
+	<if test="companyNo != null and companyNo != ''">
+	COMPANY_NO = #{companyNo} ,
+			</if>
+	<if test="businessNo != null and businessNo != ''">
+	BUSINESS_NO = #{businessNo} ,
+			</if>
+	<if test="licenceNo != null and licenceNo != ''">
+	LICENCE_NO = #{licenceNo} ,
+			</if>
+	<if test="bossIdType != null and bossIdType != ''">
+	BOSS_ID_TYPE = #{bossIdType} ,
+			</if>
+	<if test="bossIdNo != null and bossIdNo != ''">
+	BOSS_ID_NO = #{bossIdNo} ,
+			</if>
+	<if test="bossName != null and bossName != ''">
+	BOSS_NAME = #{bossName} ,
+			</if>
+	<if test="bossBday != null and bossBday != ''">
+	BOSS_BDAY = #{bossBday} ,
+			</if>
+	<if test="busRgstrDate != null and busRgstrDate != ''">
+	BUS_RGSTR_DATE = #{busRgstrDate} ,
+			</if>
+	<if test="capitalAmt != null">
+	CAPITAL_AMT = #{capitalAmt} ,
+			</if>
+	<if test="stckIssueStat != null and stckIssueStat != ''">
+	STCK_ISSUE_STAT = #{stckIssueStat} ,
+			</if>
+	<if test="busAddr1 != null and busAddr1 != ''">
+	BUS_ADDR_1 = #{busAddr1} ,
+			</if>
+	<if test="legName != null and legName != ''">
+	LEG_NAME = #{legName} ,
+			</if>
+	<if test="legInd != null and legInd != ''">
+	LEG_IND = #{legInd} ,
+			</if>
+	<if test="legExpdt != null and legExpdt != ''">
+	LEG_EXPDT = #{legExpdt} ,
+			</if>
+	<if test="filler != null and filler != ''">
+	FILLER = #{filler} ,
+			</if>
+	<if test="countryCode != null and countryCode != ''">
+	COUNTRY_CODE = #{countryCode} ,
+			</if>
+	<if test="contactRel1 != null and contactRel1 != ''">
+	CONTACT_REL_1 = #{contactRel1} ,
+			</if>
+	<if test="phoneNo1 != null and phoneNo1 != ''">
+	PHONE_NO_1 = #{phoneNo1} ,
+			</if>
+	<if test="contactRel2 != null and contactRel2 != ''">
+	CONTACT_REL_2 = #{contactRel2} ,
+			</if>
+	<if test="phoneNo2 != null and phoneNo2 != ''">
+	PHONE_NO_2 = #{phoneNo2} ,
+			</if>
+	<if test="lstMntDate != null and lstMntDate != ''">
+	LST_MNT_DATE = #{lstMntDate} ,
+			</if>
+	<if test="lstMntTell != null and lstMntTell != ''">
+	LST_MNT_TELL = #{lstMntTell} ,
+			</if>
+	<if test="lstMntBrNo != null and lstMntBrNo != ''">
+	LST_MNT_BR_NO = #{lstMntBrNo} ,
+			</if>
+	<if test="loaCardNo != null and loaCardNo != ''">
+	LOA_CARD_NO = #{loaCardNo} ,
+			</if>
+	<if test="lnAnnAudit != null and lnAnnAudit != ''">
+	LN_ANN_AUDIT = #{lnAnnAudit} ,
+			</if>
+	<if test="fxLimCurrent != null">
+	FX_LIM_CURRENT = #{fxLimCurrent} ,
+			</if>
+	<if test="fxCurrCurrent != null and fxCurrCurrent != ''">
+	FX_CURR_CURRENT = #{fxCurrCurrent} ,
+			</if>
+	<if test="fxLimCapital != null">
+	FX_LIM_CAPITAL = #{fxLimCapital} ,
+			</if>
+	<if test="fxCurrCapital != null and fxCurrCapital != ''">
+	FX_CURR_CAPITAL = #{fxCurrCapital} ,
+			</if>
+	<if test="registryDate != null and registryDate != ''">
+	REGISTRY_DATE = #{registryDate} ,
+			</if>
+	<if test="registryCurr != null and registryCurr != ''">
+	REGISTRY_CURR = #{registryCurr} ,
+			</if>
+	<if test="restrictIndstry != null and restrictIndstry != ''">
+	RESTRICT_INDSTRY = #{restrictIndstry} ,
+			</if>
+	<if test="expiryDate != null and expiryDate != ''">
+	EXPIRY_DATE = #{expiryDate} ,
+			</if>
+	<if test="relationBoc != null and relationBoc != ''">
+	RELATION_BOC = #{relationBoc} ,
+			</if>
+	<if test="shareBoc != null and shareBoc != ''">
+	SHARE_BOC = #{shareBoc} ,
+			</if>
+	<if test="bocRiskCompany != null and bocRiskCompany != ''">
+	BOC_RISK_COMPANY = #{bocRiskCompany} ,
+			</if>
+	<if test="onStockMarket != null and onStockMarket != ''">
+	ON_STOCK_MARKET = #{onStockMarket} ,
+			</if>
+	<if test="ceoIdType != null and ceoIdType != ''">
+	CEO_ID_TYPE = #{ceoIdType} ,
+			</if>
+	<if test="ceoIdNo != null and ceoIdNo != ''">
+	CEO_ID_NO = #{ceoIdNo} ,
+			</if>
+	<if test="businessScope != null and businessScope != ''">
+	BUSINESS_SCOPE = #{businessScope} ,
+			</if>
+	<if test="capRecv != null">
+	CAP_RECV = #{capRecv} ,
+			</if>
+	<if test="capRecvAprvDt != null and capRecvAprvDt != ''">
+	CAP_RECV_APRV_DT = #{capRecvAprvDt} ,
+			</if>
+	<if test="capRecvYear != null and capRecvYear != ''">
+	CAP_RECV_YEAR = #{capRecvYear} ,
+			</if>
+	<if test="fxUtilCurrent != null">
+	FX_UTIL_CURRENT = #{fxUtilCurrent} ,
+			</if>
+	<if test="fxUtilCapital != null">
+	FX_UTIL_CAPITAL = #{fxUtilCapital} ,
+			</if>
+	<if test="fxLimExceedDt != null and fxLimExceedDt != ''">
+	FX_LIM_EXCEED_DT = #{fxLimExceedDt} ,
+			</if>
+	<if test="busOwsp != null and busOwsp != ''">
+	BUS_OWSP = #{busOwsp} ,
+			</if>
+	<if test="ecnmCode != null and ecnmCode != ''">
+	ECNM_CODE = #{ecnmCode} ,
+			</if>
+	<if test="contact1mail != null and contact1mail != ''">
+	CONTACT_1_MAIL = #{contact1mail} ,
+			</if>
+	<if test="netAsset != null">
+	NET_ASSET = #{netAsset} ,
+			</if>
+	<if test="creditLine != null">
+	CREDIT_LINE = #{creditLine} ,
+			</if>
+	<if test="indCrPolicy != null and indCrPolicy != ''">
+	IND_CR_POLICY = #{indCrPolicy} ,
+			</if>
+	<if test="asoBoc != null and asoBoc != ''">
+	ASO_BOC = #{asoBoc} ,
+			</if>
+	<if test="fundCentralGov != null and fundCentralGov != ''">
+	FUND_CENTRAL_GOV = #{fundCentralGov} ,
+			</if>
+	<if test="unpaidBal != null">
+	UNPAID_BAL = #{unpaidBal} ,
+			</if>
+	<if test="ylyRpmt != null">
+	YLY_RPMT = #{ylyRpmt} ,
+			</if>
+	<if test="remarkInf != null and remarkInf != ''">
+	REMARK_INF = #{remarkInf} ,
+			</if>
+	<if test="assetLiabRatio != null and assetLiabRatio != ''">
+	ASSET_LIAB_RATIO = #{assetLiabRatio} ,
+			</if>
+	<if test="cooprtStrtDate != null and cooprtStrtDate != ''">
+	COOPRT_STRT_DATE = #{cooprtStrtDate} ,
+			</if>
+	<if test="buildOwnRent != null and buildOwnRent != ''">
+	BUILD_OWN_RENT = #{buildOwnRent} ,
+			</if>
+	<if test="depLonRatio != null and depLonRatio != ''">
+	DEP_LON_RATIO = #{depLonRatio} ,
+			</if>
+	<if test="saleIncrRate != null and saleIncrRate != ''">
+	SALE_INCR_RATE = #{saleIncrRate} ,
+			</if>
+	<if test="prftIncrRate != null and prftIncrRate != ''">
+	PRFT_INCR_RATE = #{prftIncrRate} ,
+			</if>
+	<if test="floatAssetRati != null and floatAssetRati != ''">
+	FLOAT_ASSET_RATI = #{floatAssetRati} ,
+			</if>
+	<if test="salePrftRate != null and salePrftRate != ''">
+	SALE_PRFT_RATE = #{salePrftRate} ,
+			</if>
+	<if test="netAssetRate != null and netAssetRate != ''">
+	NET_ASSET_RATE = #{netAssetRate} ,
+			</if>
+	<if test="incomeTaxRate != null and incomeTaxRate != ''">
+	INCOME_TAX_RATE = #{incomeTaxRate} ,
+			</if>
+	<if test="trsAcct != null and trsAcct != ''">
+	TRS_ACCT = #{trsAcct} ,
+			</if>
+	<if test="lastAuditDate != null and lastAuditDate != ''">
+	LAST_AUDIT_DATE = #{lastAuditDate} ,
+			</if>
+	<if test="othrBusScop != null and othrBusScop != ''">
+	OTHR_BUS_SCOP = #{othrBusScop} ,
+			</if>
+	<if test="issuQualEnty != null and issuQualEnty != ''">
+	ISSU_QUAL_ENTY = #{issuQualEnty} ,
+			</if>
+	<if test="profNo != null and profNo != ''">
+	PROF_NO = #{profNo} ,
+			</if>
+	<if test="cmptncyRate != null and cmptncyRate != ''">
+	CMPTNCY_RATE = #{cmptncyRate} ,
+			</if>
+	<if test="hgstCredit != null">
+	HGST_CREDIT = #{hgstCredit} ,
+			</if>
+	<if test="hgstPrct != null and hgstPrct != ''">
+	HGST_PRCT = #{hgstPrct} ,
+			</if>
+	<if test="lgstTerm != null and lgstTerm != ''">
+	LGST_TERM = #{lgstTerm} ,
+			</if>
+	<if test="avalCreditLmt != null">
+	AVAL_CREDIT_LMT = #{avalCreditLmt} ,
+			</if>
+	<if test="tradTerm != null and tradTerm != ''">
+	TRAD_TERM = #{tradTerm} ,
+			</if>
+	<if test="basicAcctBank != null and basicAcctBank != ''">
+	BASIC_ACCT_BANK = #{basicAcctBank} ,
+			</if>
+	<if test="basicAcctNo != null and basicAcctNo != ''">
+	BASIC_ACCT_NO = #{basicAcctNo} ,
+			</if>
+	<if test="createYear != null and createYear != ''">
+	CREATE_YEAR = #{createYear} ,
+			</if>
+	<if test="empNum != null and empNum != ''">
+	EMP_NUM = #{empNum} ,
+			</if>
+	<if test="stockCode1 != null and stockCode1 != ''">
+	STOCK_CODE1 = #{stockCode1} ,
+			</if>
+	<if test="stockExchList1 != null and stockExchList1 != ''">
+	STOCK_EXCH_LIST1 = #{stockExchList1} ,
+			</if>
+	<if test="stockCode2 != null and stockCode2 != ''">
+	STOCK_CODE2 = #{stockCode2} ,
+			</if>
+	<if test="stockExchList2 != null and stockExchList2 != ''">
+	STOCK_EXCH_LIST2 = #{stockExchList2} ,
+			</if>
+	<if test="stockCode3 != null and stockCode3 != ''">
+	STOCK_CODE3 = #{stockCode3} ,
+			</if>
+	<if test="stockExchList3 != null and stockExchList3 != ''">
+	STOCK_EXCH_LIST3 = #{stockExchList3} ,
+			</if>
+	<if test="aprvName1 != null and aprvName1 != ''">
+	APRV_NAME1 = #{aprvName1} ,
+			</if>
+	<if test="aprvFixNo1 != null and aprvFixNo1 != ''">
+	APRV_FIX_NO1 = #{aprvFixNo1} ,
+			</if>
+	<if test="aprvMobile1 != null and aprvMobile1 != ''">
+	APRV_MOBILE1 = #{aprvMobile1} ,
+			</if>
+	<if test="aprvName2 != null and aprvName2 != ''">
+	APRV_NAME2 = #{aprvName2} ,
+			</if>
+	<if test="aprvFixNo2 != null and aprvFixNo2 != ''">
+	APRV_FIX_NO2 = #{aprvFixNo2} ,
+			</if>
+	<if test="aprvMobile2 != null and aprvMobile2 != ''">
+	APRV_MOBILE2 = #{aprvMobile2} ,
+			</if>
+	<if test="fxAppLimit != null">
+	FX_APP_LIMIT = #{fxAppLimit} ,
+			</if>
+	<if test="fxCurrency != null and fxCurrency != ''">
+	FX_CURRENCY = #{fxCurrency} ,
+			</if>
+	<if test="fxResdLimit != null">
+	FX_RESD_LIMIT = #{fxResdLimit} ,
+			</if>
+	<if test="fxApprovalNo != null and fxApprovalNo != ''">
+	FX_APPROVAL_NO = #{fxApprovalNo} ,
+			</if>
+	<if test="fxLimtExpDt != null and fxLimtExpDt != ''">
+	FX_LIMT_EXP_DT = #{fxLimtExpDt} ,
+			</if>
+	<if test="fxLimitUsed != null">
+	FX_LIMIT_USED = #{fxLimitUsed} ,
+			</if>
+	<if test="bossInd != null and bossInd != ''">
+	BOSS_IND = #{bossInd} ,
+			</if>
+	<if test="bossExpiryDate != null and bossExpiryDate != ''">
+	BOSS_EXPIRY_DATE = #{bossExpiryDate} ,
+			</if>
+	<if test="bossPhone != null and bossPhone != ''">
+	BOSS_PHONE = #{bossPhone} ,
+			</if>
+	<if test="areaCode != null">
+	AREA_CODE = #{areaCode} ,
+			</if>
+	<if test="businessScope1 != null and businessScope1 != ''">
+	BUSINESS_SCOPE_1 = #{businessScope1} ,
+			</if>
+	<if test="businessScope2 != null and businessScope2 != ''">
+	BUSINESS_SCOPE_2 = #{businessScope2} ,
+			</if>
+	<if test="businessScope3 != null and businessScope3 != ''">
+	BUSINESS_SCOPE_3 = #{businessScope3} 
+			</if>
+			</set>
+			</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE BCS_CUSVD4
+	<include refid="update_sql" />
+	WHERE
+	INST_NO = #{instNo}  AND
+	CUST_NO = #{custNo}  AND
+	RECNO = #{recno} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE BCS_CUSVD4
+	<include refid="update_sql" />
+		WHERE
+	INST_NOCUST_NORECNO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM BCS_CUSVD4
+				WHERE
+					INST_NO = #{id}  AND 
+					CUST_NO = #{id}  AND 
+					RECNO = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM BCS_CUSVD4
+		WHERE INST_NO CUST_NO RECNO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_BcsCusvd4">
+		SELECT
+	<include refid="columns" />
+		FROM BCS_CUSVD4
+		WHERE
+		INST_NO = #{id}  AND 
+		CUST_NO = #{id}  AND 
+		RECNO = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+	<if test="code != null and code !=''">
+		AND CODE = #{code}
+	</if>
+	<if test="deli != null and deli !=''">
+		AND DELI = #{deli}
+	</if>
+	<if test="instNo != null and instNo !=''">
+		AND INST_NO = #{instNo}
+	</if>
+	<if test="custNo != null and custNo !=''">
+		AND CUST_NO = #{custNo}
+	</if>
+	<if test="recno != null and recno !=''">
+		AND RECNO = #{recno}
+	</if>
+	<if test="contact1 != null and contact1 !=''">
+		AND CONTACT_1 = #{contact1}
+	</if>
+	<if test="title1 != null and title1 !=''">
+		AND TITLE_1 = #{title1}
+	</if>
+	<if test="contact2 != null and contact2 !=''">
+		AND CONTACT_2 = #{contact2}
+	</if>
+	<if test="title2 != null and title2 !=''">
+		AND TITLE_2 = #{title2}
+	</if>
+	<if test="companyNo != null and companyNo !=''">
+		AND COMPANY_NO = #{companyNo}
+	</if>
+	<if test="businessNo != null and businessNo !=''">
+		AND BUSINESS_NO = #{businessNo}
+	</if>
+	<if test="licenceNo != null and licenceNo !=''">
+		AND LICENCE_NO = #{licenceNo}
+	</if>
+	<if test="bossIdType != null and bossIdType !=''">
+		AND BOSS_ID_TYPE = #{bossIdType}
+	</if>
+	<if test="bossIdNo != null and bossIdNo !=''">
+		AND BOSS_ID_NO = #{bossIdNo}
+	</if>
+	<if test="bossName != null and bossName !=''">
+		AND BOSS_NAME = #{bossName}
+	</if>
+	<if test="bossBday != null and bossBday !=''">
+		AND BOSS_BDAY = #{bossBday}
+	</if>
+	<if test="busRgstrDate != null and busRgstrDate !=''">
+		AND BUS_RGSTR_DATE = #{busRgstrDate}
+	</if>
+		<if test="capitalAmt != null">
+			AND CAPITAL_AMT = #{capitalAmt}
+		</if>
+	<if test="stckIssueStat != null and stckIssueStat !=''">
+		AND STCK_ISSUE_STAT = #{stckIssueStat}
+	</if>
+	<if test="busAddr1 != null and busAddr1 !=''">
+		AND BUS_ADDR_1 = #{busAddr1}
+	</if>
+	<if test="legName != null and legName !=''">
+		AND LEG_NAME = #{legName}
+	</if>
+	<if test="legInd != null and legInd !=''">
+		AND LEG_IND = #{legInd}
+	</if>
+	<if test="legExpdt != null and legExpdt !=''">
+		AND LEG_EXPDT = #{legExpdt}
+	</if>
+	<if test="filler != null and filler !=''">
+		AND FILLER = #{filler}
+	</if>
+	<if test="countryCode != null and countryCode !=''">
+		AND COUNTRY_CODE = #{countryCode}
+	</if>
+	<if test="contactRel1 != null and contactRel1 !=''">
+		AND CONTACT_REL_1 = #{contactRel1}
+	</if>
+	<if test="phoneNo1 != null and phoneNo1 !=''">
+		AND PHONE_NO_1 = #{phoneNo1}
+	</if>
+	<if test="contactRel2 != null and contactRel2 !=''">
+		AND CONTACT_REL_2 = #{contactRel2}
+	</if>
+	<if test="phoneNo2 != null and phoneNo2 !=''">
+		AND PHONE_NO_2 = #{phoneNo2}
+	</if>
+	<if test="lstMntDate != null and lstMntDate !=''">
+		AND LST_MNT_DATE = #{lstMntDate}
+	</if>
+	<if test="lstMntTell != null and lstMntTell !=''">
+		AND LST_MNT_TELL = #{lstMntTell}
+	</if>
+	<if test="lstMntBrNo != null and lstMntBrNo !=''">
+		AND LST_MNT_BR_NO = #{lstMntBrNo}
+	</if>
+	<if test="loaCardNo != null and loaCardNo !=''">
+		AND LOA_CARD_NO = #{loaCardNo}
+	</if>
+	<if test="lnAnnAudit != null and lnAnnAudit !=''">
+		AND LN_ANN_AUDIT = #{lnAnnAudit}
+	</if>
+		<if test="fxLimCurrent != null">
+			AND FX_LIM_CURRENT = #{fxLimCurrent}
+		</if>
+	<if test="fxCurrCurrent != null and fxCurrCurrent !=''">
+		AND FX_CURR_CURRENT = #{fxCurrCurrent}
+	</if>
+		<if test="fxLimCapital != null">
+			AND FX_LIM_CAPITAL = #{fxLimCapital}
+		</if>
+	<if test="fxCurrCapital != null and fxCurrCapital !=''">
+		AND FX_CURR_CAPITAL = #{fxCurrCapital}
+	</if>
+	<if test="registryDate != null and registryDate !=''">
+		AND REGISTRY_DATE = #{registryDate}
+	</if>
+	<if test="registryCurr != null and registryCurr !=''">
+		AND REGISTRY_CURR = #{registryCurr}
+	</if>
+	<if test="restrictIndstry != null and restrictIndstry !=''">
+		AND RESTRICT_INDSTRY = #{restrictIndstry}
+	</if>
+	<if test="expiryDate != null and expiryDate !=''">
+		AND EXPIRY_DATE = #{expiryDate}
+	</if>
+	<if test="relationBoc != null and relationBoc !=''">
+		AND RELATION_BOC = #{relationBoc}
+	</if>
+	<if test="shareBoc != null and shareBoc !=''">
+		AND SHARE_BOC = #{shareBoc}
+	</if>
+	<if test="bocRiskCompany != null and bocRiskCompany !=''">
+		AND BOC_RISK_COMPANY = #{bocRiskCompany}
+	</if>
+	<if test="onStockMarket != null and onStockMarket !=''">
+		AND ON_STOCK_MARKET = #{onStockMarket}
+	</if>
+	<if test="ceoIdType != null and ceoIdType !=''">
+		AND CEO_ID_TYPE = #{ceoIdType}
+	</if>
+	<if test="ceoIdNo != null and ceoIdNo !=''">
+		AND CEO_ID_NO = #{ceoIdNo}
+	</if>
+	<if test="businessScope != null and businessScope !=''">
+		AND BUSINESS_SCOPE = #{businessScope}
+	</if>
+		<if test="capRecv != null">
+			AND CAP_RECV = #{capRecv}
+		</if>
+	<if test="capRecvAprvDt != null and capRecvAprvDt !=''">
+		AND CAP_RECV_APRV_DT = #{capRecvAprvDt}
+	</if>
+	<if test="capRecvYear != null and capRecvYear !=''">
+		AND CAP_RECV_YEAR = #{capRecvYear}
+	</if>
+		<if test="fxUtilCurrent != null">
+			AND FX_UTIL_CURRENT = #{fxUtilCurrent}
+		</if>
+		<if test="fxUtilCapital != null">
+			AND FX_UTIL_CAPITAL = #{fxUtilCapital}
+		</if>
+	<if test="fxLimExceedDt != null and fxLimExceedDt !=''">
+		AND FX_LIM_EXCEED_DT = #{fxLimExceedDt}
+	</if>
+	<if test="busOwsp != null and busOwsp !=''">
+		AND BUS_OWSP = #{busOwsp}
+	</if>
+	<if test="ecnmCode != null and ecnmCode !=''">
+		AND ECNM_CODE = #{ecnmCode}
+	</if>
+	<if test="contact1mail != null and contact1mail !=''">
+		AND CONTACT_1_MAIL = #{contact1mail}
+	</if>
+		<if test="netAsset != null">
+			AND NET_ASSET = #{netAsset}
+		</if>
+		<if test="creditLine != null">
+			AND CREDIT_LINE = #{creditLine}
+		</if>
+	<if test="indCrPolicy != null and indCrPolicy !=''">
+		AND IND_CR_POLICY = #{indCrPolicy}
+	</if>
+	<if test="asoBoc != null and asoBoc !=''">
+		AND ASO_BOC = #{asoBoc}
+	</if>
+	<if test="fundCentralGov != null and fundCentralGov !=''">
+		AND FUND_CENTRAL_GOV = #{fundCentralGov}
+	</if>
+		<if test="unpaidBal != null">
+			AND UNPAID_BAL = #{unpaidBal}
+		</if>
+		<if test="ylyRpmt != null">
+			AND YLY_RPMT = #{ylyRpmt}
+		</if>
+	<if test="remarkInf != null and remarkInf !=''">
+		AND REMARK_INF = #{remarkInf}
+	</if>
+	<if test="assetLiabRatio != null and assetLiabRatio !=''">
+		AND ASSET_LIAB_RATIO = #{assetLiabRatio}
+	</if>
+	<if test="cooprtStrtDate != null and cooprtStrtDate !=''">
+		AND COOPRT_STRT_DATE = #{cooprtStrtDate}
+	</if>
+	<if test="buildOwnRent != null and buildOwnRent !=''">
+		AND BUILD_OWN_RENT = #{buildOwnRent}
+	</if>
+	<if test="depLonRatio != null and depLonRatio !=''">
+		AND DEP_LON_RATIO = #{depLonRatio}
+	</if>
+	<if test="saleIncrRate != null and saleIncrRate !=''">
+		AND SALE_INCR_RATE = #{saleIncrRate}
+	</if>
+	<if test="prftIncrRate != null and prftIncrRate !=''">
+		AND PRFT_INCR_RATE = #{prftIncrRate}
+	</if>
+	<if test="floatAssetRati != null and floatAssetRati !=''">
+		AND FLOAT_ASSET_RATI = #{floatAssetRati}
+	</if>
+	<if test="salePrftRate != null and salePrftRate !=''">
+		AND SALE_PRFT_RATE = #{salePrftRate}
+	</if>
+	<if test="netAssetRate != null and netAssetRate !=''">
+		AND NET_ASSET_RATE = #{netAssetRate}
+	</if>
+	<if test="incomeTaxRate != null and incomeTaxRate !=''">
+		AND INCOME_TAX_RATE = #{incomeTaxRate}
+	</if>
+	<if test="trsAcct != null and trsAcct !=''">
+		AND TRS_ACCT = #{trsAcct}
+	</if>
+	<if test="lastAuditDate != null and lastAuditDate !=''">
+		AND LAST_AUDIT_DATE = #{lastAuditDate}
+	</if>
+	<if test="othrBusScop != null and othrBusScop !=''">
+		AND OTHR_BUS_SCOP = #{othrBusScop}
+	</if>
+	<if test="issuQualEnty != null and issuQualEnty !=''">
+		AND ISSU_QUAL_ENTY = #{issuQualEnty}
+	</if>
+	<if test="profNo != null and profNo !=''">
+		AND PROF_NO = #{profNo}
+	</if>
+	<if test="cmptncyRate != null and cmptncyRate !=''">
+		AND CMPTNCY_RATE = #{cmptncyRate}
+	</if>
+		<if test="hgstCredit != null">
+			AND HGST_CREDIT = #{hgstCredit}
+		</if>
+	<if test="hgstPrct != null and hgstPrct !=''">
+		AND HGST_PRCT = #{hgstPrct}
+	</if>
+	<if test="lgstTerm != null and lgstTerm !=''">
+		AND LGST_TERM = #{lgstTerm}
+	</if>
+		<if test="avalCreditLmt != null">
+			AND AVAL_CREDIT_LMT = #{avalCreditLmt}
+		</if>
+	<if test="tradTerm != null and tradTerm !=''">
+		AND TRAD_TERM = #{tradTerm}
+	</if>
+	<if test="basicAcctBank != null and basicAcctBank !=''">
+		AND BASIC_ACCT_BANK = #{basicAcctBank}
+	</if>
+	<if test="basicAcctNo != null and basicAcctNo !=''">
+		AND BASIC_ACCT_NO = #{basicAcctNo}
+	</if>
+	<if test="createYear != null and createYear !=''">
+		AND CREATE_YEAR = #{createYear}
+	</if>
+	<if test="empNum != null and empNum !=''">
+		AND EMP_NUM = #{empNum}
+	</if>
+	<if test="stockCode1 != null and stockCode1 !=''">
+		AND STOCK_CODE1 = #{stockCode1}
+	</if>
+	<if test="stockExchList1 != null and stockExchList1 !=''">
+		AND STOCK_EXCH_LIST1 = #{stockExchList1}
+	</if>
+	<if test="stockCode2 != null and stockCode2 !=''">
+		AND STOCK_CODE2 = #{stockCode2}
+	</if>
+	<if test="stockExchList2 != null and stockExchList2 !=''">
+		AND STOCK_EXCH_LIST2 = #{stockExchList2}
+	</if>
+	<if test="stockCode3 != null and stockCode3 !=''">
+		AND STOCK_CODE3 = #{stockCode3}
+	</if>
+	<if test="stockExchList3 != null and stockExchList3 !=''">
+		AND STOCK_EXCH_LIST3 = #{stockExchList3}
+	</if>
+	<if test="aprvName1 != null and aprvName1 !=''">
+		AND APRV_NAME1 = #{aprvName1}
+	</if>
+	<if test="aprvFixNo1 != null and aprvFixNo1 !=''">
+		AND APRV_FIX_NO1 = #{aprvFixNo1}
+	</if>
+	<if test="aprvMobile1 != null and aprvMobile1 !=''">
+		AND APRV_MOBILE1 = #{aprvMobile1}
+	</if>
+	<if test="aprvName2 != null and aprvName2 !=''">
+		AND APRV_NAME2 = #{aprvName2}
+	</if>
+	<if test="aprvFixNo2 != null and aprvFixNo2 !=''">
+		AND APRV_FIX_NO2 = #{aprvFixNo2}
+	</if>
+	<if test="aprvMobile2 != null and aprvMobile2 !=''">
+		AND APRV_MOBILE2 = #{aprvMobile2}
+	</if>
+		<if test="fxAppLimit != null">
+			AND FX_APP_LIMIT = #{fxAppLimit}
+		</if>
+	<if test="fxCurrency != null and fxCurrency !=''">
+		AND FX_CURRENCY = #{fxCurrency}
+	</if>
+		<if test="fxResdLimit != null">
+			AND FX_RESD_LIMIT = #{fxResdLimit}
+		</if>
+	<if test="fxApprovalNo != null and fxApprovalNo !=''">
+		AND FX_APPROVAL_NO = #{fxApprovalNo}
+	</if>
+	<if test="fxLimtExpDt != null and fxLimtExpDt !=''">
+		AND FX_LIMT_EXP_DT = #{fxLimtExpDt}
+	</if>
+		<if test="fxLimitUsed != null">
+			AND FX_LIMIT_USED = #{fxLimitUsed}
+		</if>
+	<if test="bossInd != null and bossInd !=''">
+		AND BOSS_IND = #{bossInd}
+	</if>
+	<if test="bossExpiryDate != null and bossExpiryDate !=''">
+		AND BOSS_EXPIRY_DATE = #{bossExpiryDate}
+	</if>
+	<if test="bossPhone != null and bossPhone !=''">
+		AND BOSS_PHONE = #{bossPhone}
+	</if>
+		<if test="areaCode != null">
+			AND AREA_CODE = #{areaCode}
+		</if>
+	<if test="businessScope1 != null and businessScope1 !=''">
+		AND BUSINESS_SCOPE_1 = #{businessScope1}
+	</if>
+	<if test="businessScope2 != null and businessScope2 !=''">
+		AND BUSINESS_SCOPE_2 = #{businessScope2}
+	</if>
+	<if test="businessScope3 != null and businessScope3 !=''">
+		AND BUSINESS_SCOPE_3 = #{businessScope3}
+	</if>
+			</where>
+			</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_BcsCusvd4" parameterType="com.beebank.monitor.entity.BcsCusvd4">
+		SELECT
+		<include refid="columns" />
+		FROM BCS_CUSVD4
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM BCS_CUSVD4
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_BcsCusvd4" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM BCS_CUSVD4
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<!-- 查询执行区间记录的指定字段 -->
+	<select id="listCusvd4" resultMap="RM_BcsCusvd4" parameterType="int">
+		SELECT CUST_NO, BOSS_IND, BOSS_NAME,BOSS_ID_NO,BOSS_ID_TYPE FROM
+		(SELECT
+		ROWNUMBER() OVER(order by CUST_NO) RN,
+		CUST_NO, BOSS_IND, BOSS_NAME,BOSS_ID_NO,BOSS_ID_TYPE
+		FROM BCS_CUSVD4
+		) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<!--	删除所有数据-->
+	<delete id="deleteAll" >
+		TRUNCATE TABLE BCS_CUSVD4 immediate
+-- 		DELETE FROM BCS_CUSVD4
+	</delete>
+</mapper>

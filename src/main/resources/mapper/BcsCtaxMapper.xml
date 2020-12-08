@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.BcsCtaxDao">
+
+	<resultMap id="RM_BcsCtax" type="com.beebank.monitor.entity.BcsCtax">
+		<result property="instNo" column="INST_NO"/>
+		<result property="custNo" column="CUST_NO"/>
+		<result property="finMaster" column="FIN_MASTER"/>
+		<result property="finMasIdTy" column="FIN_MAS_ID_TY"/>
+		<result property="finMasIdNo" column="FIN_MAS_ID_NO"/>
+		<result property="finMasExpDt" column="FIN_MAS_EXP_DT"/>
+		<result property="finMasPhone" column="FIN_MAS_PHONE"/>
+		<result property="depOpenBank" column="DEP_OPEN_BANK"/>
+		<result property="depAcctNo" column="DEP_ACCT_NO"/>
+		<result property="certOrgCode" column="CERT_ORG_CODE"/>
+		<result property="invoiceInd" column="INVOICE_IND"/>
+		<result property="taxPayerIdenId" column="TAX_PAYER_IDEN_ID"/>
+		<result property="taxPayerDen" column="TAX_PAYER_DEN"/>
+		<result property="comTaxRegName" column="COM_TAX_REG_NAME"/>
+		<result property="comTaxRegPhone" column="COM_TAX_REG_PHONE"/>
+		<result property="comTaxRegAdd" column="COM_TAX_REG_ADD"/>
+		<result property="paySysBrch" column="PAY_SYS_BRCH"/>
+		<result property="invoiceMailAdd" column="INVOICE_MAIL_ADD"/>
+		<result property="invoiceReceiver" column="INVOICE_RECEIVER"/>
+		<result property="invoiceRecPhone" column="INVOICE_REC_PHONE"/>
+		<result property="invoiceFreq" column="INVOICE_FREQ"/>
+		<result property="invoiceObePhone" column="INVOICE_OBE_PHONE"/>
+		<result property="isShareholder" column="IS_SHAREHOLDER"/>
+		<result property="isHighTechEnt" column="IS_HIGH_TECH_ENT"/>
+		<result property="isAccociatedGov" column="IS_ACCOCIATED_GOV"/>
+		<result property="companyScale" column="COMPANY_SCALE"/>
+		<result property="groupClientInd" column="GROUP_CLIENT_IND"/>
+		<result property="customerLocal" column="CUSTOMER_LOCAL"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			INST_NO,CUST_NO,FIN_MASTER,FIN_MAS_ID_TY,FIN_MAS_ID_NO,FIN_MAS_EXP_DT,FIN_MAS_PHONE,DEP_OPEN_BANK,DEP_ACCT_NO,CERT_ORG_CODE,INVOICE_IND,TAX_PAYER_IDEN_ID,TAX_PAYER_DEN,COM_TAX_REG_NAME,COM_TAX_REG_PHONE,COM_TAX_REG_ADD,PAY_SYS_BRCH,INVOICE_MAIL_ADD,INVOICE_RECEIVER,INVOICE_REC_PHONE,INVOICE_FREQ,INVOICE_OBE_PHONE,IS_SHAREHOLDER,IS_HIGH_TECH_ENT,IS_ACCOCIATED_GOV,COMPANY_SCALE,GROUP_CLIENT_IND,CUSTOMER_LOCAL
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="instNo">
+	<![CDATA[
+				INSERT INTO BCS_CTAX (
+					INST_NO ,
+					CUST_NO ,
+					FIN_MASTER ,
+					FIN_MAS_ID_TY ,
+					FIN_MAS_ID_NO ,
+					FIN_MAS_EXP_DT ,
+					FIN_MAS_PHONE ,
+					DEP_OPEN_BANK ,
+					DEP_ACCT_NO ,
+					CERT_ORG_CODE ,
+					INVOICE_IND ,
+					TAX_PAYER_IDEN_ID ,
+					TAX_PAYER_DEN ,
+					COM_TAX_REG_NAME ,
+					COM_TAX_REG_PHONE ,
+					COM_TAX_REG_ADD ,
+					PAY_SYS_BRCH ,
+					INVOICE_MAIL_ADD ,
+					INVOICE_RECEIVER ,
+					INVOICE_REC_PHONE ,
+					INVOICE_FREQ ,
+					INVOICE_OBE_PHONE ,
+					IS_SHAREHOLDER ,
+					IS_HIGH_TECH_ENT ,
+					IS_ACCOCIATED_GOV ,
+					COMPANY_SCALE ,
+					GROUP_CLIENT_IND ,
+					CUSTOMER_LOCAL 
+				) VALUES (
+					#{instNo} ,
+					#{custNo} ,
+					#{finMaster} ,
+					#{finMasIdTy} ,
+					#{finMasIdNo} ,
+					#{finMasExpDt} ,
+					#{finMasPhone} ,
+					#{depOpenBank} ,
+					#{depAcctNo} ,
+					#{certOrgCode} ,
+					#{invoiceInd} ,
+					#{taxPayerIdenId} ,
+					#{taxPayerDen} ,
+					#{comTaxRegName} ,
+					#{comTaxRegPhone} ,
+					#{comTaxRegAdd} ,
+					#{paySysBrch} ,
+					#{invoiceMailAdd} ,
+					#{invoiceReceiver} ,
+					#{invoiceRecPhone} ,
+					#{invoiceFreq} ,
+					#{invoiceObePhone} ,
+					#{isShareholder} ,
+					#{isHighTechEnt} ,
+					#{isAccociatedGov} ,
+					#{companyScale} ,
+					#{groupClientInd} ,
+					#{customerLocal} 
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO BCS_CTAX (
+						INST_NO ,
+						CUST_NO ,
+						FIN_MASTER ,
+						FIN_MAS_ID_TY ,
+						FIN_MAS_ID_NO ,
+						FIN_MAS_EXP_DT ,
+						FIN_MAS_PHONE ,
+						DEP_OPEN_BANK ,
+						DEP_ACCT_NO ,
+						CERT_ORG_CODE ,
+						INVOICE_IND ,
+						TAX_PAYER_IDEN_ID ,
+						TAX_PAYER_DEN ,
+						COM_TAX_REG_NAME ,
+						COM_TAX_REG_PHONE ,
+						COM_TAX_REG_ADD ,
+						PAY_SYS_BRCH ,
+						INVOICE_MAIL_ADD ,
+						INVOICE_RECEIVER ,
+						INVOICE_REC_PHONE ,
+						INVOICE_FREQ ,
+						INVOICE_OBE_PHONE ,
+						IS_SHAREHOLDER ,
+						IS_HIGH_TECH_ENT ,
+						IS_ACCOCIATED_GOV ,
+						COMPANY_SCALE ,
+						GROUP_CLIENT_IND ,
+						CUSTOMER_LOCAL 
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.instNo} ,
+	#{item.custNo} ,
+	#{item.finMaster} ,
+	#{item.finMasIdTy} ,
+	#{item.finMasIdNo} ,
+	#{item.finMasExpDt} ,
+	#{item.finMasPhone} ,
+	#{item.depOpenBank} ,
+	#{item.depAcctNo} ,
+	#{item.certOrgCode} ,
+	#{item.invoiceInd} ,
+	#{item.taxPayerIdenId} ,
+	#{item.taxPayerDen} ,
+	#{item.comTaxRegName} ,
+	#{item.comTaxRegPhone} ,
+	#{item.comTaxRegAdd} ,
+	#{item.paySysBrch} ,
+	#{item.invoiceMailAdd} ,
+	#{item.invoiceReceiver} ,
+	#{item.invoiceRecPhone} ,
+	#{item.invoiceFreq} ,
+	#{item.invoiceObePhone} ,
+	#{item.isShareholder} ,
+	#{item.isHighTechEnt} ,
+	#{item.isAccociatedGov} ,
+	#{item.companyScale} ,
+	#{item.groupClientInd} ,
+	#{item.customerLocal} 
+			)
+			</foreach>
+
+			</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="finMaster != null and finMaster != ''">
+	FIN_MASTER = #{finMaster} ,
+			</if>
+	<if test="finMasIdTy != null and finMasIdTy != ''">
+	FIN_MAS_ID_TY = #{finMasIdTy} ,
+			</if>
+	<if test="finMasIdNo != null and finMasIdNo != ''">
+	FIN_MAS_ID_NO = #{finMasIdNo} ,
+			</if>
+	<if test="finMasExpDt != null and finMasExpDt != ''">
+	FIN_MAS_EXP_DT = #{finMasExpDt} ,
+			</if>
+	<if test="finMasPhone != null and finMasPhone != ''">
+	FIN_MAS_PHONE = #{finMasPhone} ,
+			</if>
+	<if test="depOpenBank != null and depOpenBank != ''">
+	DEP_OPEN_BANK = #{depOpenBank} ,
+			</if>
+	<if test="depAcctNo != null and depAcctNo != ''">
+	DEP_ACCT_NO = #{depAcctNo} ,
+			</if>
+	<if test="certOrgCode != null and certOrgCode != ''">
+	CERT_ORG_CODE = #{certOrgCode} ,
+			</if>
+	<if test="invoiceInd != null and invoiceInd != ''">
+	INVOICE_IND = #{invoiceInd} ,
+			</if>
+	<if test="taxPayerIdenId != null and taxPayerIdenId != ''">
+	TAX_PAYER_IDEN_ID = #{taxPayerIdenId} ,
+			</if>
+	<if test="taxPayerDen != null and taxPayerDen != ''">
+	TAX_PAYER_DEN = #{taxPayerDen} ,
+			</if>
+	<if test="comTaxRegName != null and comTaxRegName != ''">
+	COM_TAX_REG_NAME = #{comTaxRegName} ,
+			</if>
+	<if test="comTaxRegPhone != null and comTaxRegPhone != ''">
+	COM_TAX_REG_PHONE = #{comTaxRegPhone} ,
+			</if>
+	<if test="comTaxRegAdd != null and comTaxRegAdd != ''">
+	COM_TAX_REG_ADD = #{comTaxRegAdd} ,
+			</if>
+	<if test="paySysBrch != null and paySysBrch != ''">
+	PAY_SYS_BRCH = #{paySysBrch} ,
+			</if>
+	<if test="invoiceMailAdd != null and invoiceMailAdd != ''">
+	INVOICE_MAIL_ADD = #{invoiceMailAdd} ,
+			</if>
+	<if test="invoiceReceiver != null and invoiceReceiver != ''">
+	INVOICE_RECEIVER = #{invoiceReceiver} ,
+			</if>
+	<if test="invoiceRecPhone != null and invoiceRecPhone != ''">
+	INVOICE_REC_PHONE = #{invoiceRecPhone} ,
+			</if>
+	<if test="invoiceFreq != null and invoiceFreq != ''">
+	INVOICE_FREQ = #{invoiceFreq} ,
+			</if>
+	<if test="invoiceObePhone != null and invoiceObePhone != ''">
+	INVOICE_OBE_PHONE = #{invoiceObePhone} ,
+			</if>
+	<if test="isShareholder != null and isShareholder != ''">
+	IS_SHAREHOLDER = #{isShareholder} ,
+			</if>
+	<if test="isHighTechEnt != null and isHighTechEnt != ''">
+	IS_HIGH_TECH_ENT = #{isHighTechEnt} ,
+			</if>
+	<if test="isAccociatedGov != null and isAccociatedGov != ''">
+	IS_ACCOCIATED_GOV = #{isAccociatedGov} ,
+			</if>
+	<if test="companyScale != null and companyScale != ''">
+	COMPANY_SCALE = #{companyScale} ,
+			</if>
+	<if test="groupClientInd != null and groupClientInd != ''">
+	GROUP_CLIENT_IND = #{groupClientInd} ,
+			</if>
+	<if test="customerLocal != null and customerLocal != ''">
+	CUSTOMER_LOCAL = #{customerLocal} 
+			</if>
+			</set>
+			</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE BCS_CTAX
+	<include refid="update_sql" />
+	WHERE
+	INST_NO = #{instNo}  AND
+	CUST_NO = #{custNo} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE BCS_CTAX
+	<include refid="update_sql" />
+		WHERE
+	INST_NOCUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM BCS_CTAX
+				WHERE
+					INST_NO = #{id}  AND 
+					CUST_NO = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM BCS_CTAX
+		WHERE INST_NO CUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_BcsCtax">
+		SELECT
+	<include refid="columns" />
+		FROM BCS_CTAX
+		WHERE
+		INST_NO = #{id}  AND 
+		CUST_NO = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+	<if test="instNo != null and instNo !=''">
+		AND INST_NO = #{instNo}
+	</if>
+	<if test="custNo != null and custNo !=''">
+		AND CUST_NO = #{custNo}
+	</if>
+	<if test="finMaster != null and finMaster !=''">
+		AND FIN_MASTER = #{finMaster}
+	</if>
+	<if test="finMasIdTy != null and finMasIdTy !=''">
+		AND FIN_MAS_ID_TY = #{finMasIdTy}
+	</if>
+	<if test="finMasIdNo != null and finMasIdNo !=''">
+		AND FIN_MAS_ID_NO = #{finMasIdNo}
+	</if>
+	<if test="finMasExpDt != null and finMasExpDt !=''">
+		AND FIN_MAS_EXP_DT = #{finMasExpDt}
+	</if>
+	<if test="finMasPhone != null and finMasPhone !=''">
+		AND FIN_MAS_PHONE = #{finMasPhone}
+	</if>
+	<if test="depOpenBank != null and depOpenBank !=''">
+		AND DEP_OPEN_BANK = #{depOpenBank}
+	</if>
+	<if test="depAcctNo != null and depAcctNo !=''">
+		AND DEP_ACCT_NO = #{depAcctNo}
+	</if>
+	<if test="certOrgCode != null and certOrgCode !=''">
+		AND CERT_ORG_CODE = #{certOrgCode}
+	</if>
+	<if test="invoiceInd != null and invoiceInd !=''">
+		AND INVOICE_IND = #{invoiceInd}
+	</if>
+	<if test="taxPayerIdenId != null and taxPayerIdenId !=''">
+		AND TAX_PAYER_IDEN_ID = #{taxPayerIdenId}
+	</if>
+	<if test="taxPayerDen != null and taxPayerDen !=''">
+		AND TAX_PAYER_DEN = #{taxPayerDen}
+	</if>
+	<if test="comTaxRegName != null and comTaxRegName !=''">
+		AND COM_TAX_REG_NAME = #{comTaxRegName}
+	</if>
+	<if test="comTaxRegPhone != null and comTaxRegPhone !=''">
+		AND COM_TAX_REG_PHONE = #{comTaxRegPhone}
+	</if>
+	<if test="comTaxRegAdd != null and comTaxRegAdd !=''">
+		AND COM_TAX_REG_ADD = #{comTaxRegAdd}
+	</if>
+	<if test="paySysBrch != null and paySysBrch !=''">
+		AND PAY_SYS_BRCH = #{paySysBrch}
+	</if>
+	<if test="invoiceMailAdd != null and invoiceMailAdd !=''">
+		AND INVOICE_MAIL_ADD = #{invoiceMailAdd}
+	</if>
+	<if test="invoiceReceiver != null and invoiceReceiver !=''">
+		AND INVOICE_RECEIVER = #{invoiceReceiver}
+	</if>
+	<if test="invoiceRecPhone != null and invoiceRecPhone !=''">
+		AND INVOICE_REC_PHONE = #{invoiceRecPhone}
+	</if>
+	<if test="invoiceFreq != null and invoiceFreq !=''">
+		AND INVOICE_FREQ = #{invoiceFreq}
+	</if>
+	<if test="invoiceObePhone != null and invoiceObePhone !=''">
+		AND INVOICE_OBE_PHONE = #{invoiceObePhone}
+	</if>
+	<if test="isShareholder != null and isShareholder !=''">
+		AND IS_SHAREHOLDER = #{isShareholder}
+	</if>
+	<if test="isHighTechEnt != null and isHighTechEnt !=''">
+		AND IS_HIGH_TECH_ENT = #{isHighTechEnt}
+	</if>
+	<if test="isAccociatedGov != null and isAccociatedGov !=''">
+		AND IS_ACCOCIATED_GOV = #{isAccociatedGov}
+	</if>
+	<if test="companyScale != null and companyScale !=''">
+		AND COMPANY_SCALE = #{companyScale}
+	</if>
+	<if test="groupClientInd != null and groupClientInd !=''">
+		AND GROUP_CLIENT_IND = #{groupClientInd}
+	</if>
+	<if test="customerLocal != null and customerLocal !=''">
+		AND CUSTOMER_LOCAL = #{customerLocal}
+	</if>
+			</where>
+			</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_BcsCtax" parameterType="com.beebank.monitor.entity.BcsCtax">
+		SELECT
+		<include refid="columns" />
+		FROM BCS_CTAX
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM BCS_CTAX
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_BcsCtax" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM BCS_CTAX
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<!-- 查询执行区间记录的指定字段 -->
+	<select id="listCtax" resultMap="RM_BcsCtax" parameterType="int">
+		SELECT CUST_NO, FIN_MASTER,FIN_MAS_ID_NO,FIN_MAS_ID_TY FROM
+		(SELECT
+		ROWNUMBER() OVER(order by CUST_NO) RN,
+		CUST_NO, FIN_MASTER,FIN_MAS_ID_NO,FIN_MAS_ID_TY
+		FROM BCS_CTAX
+		) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<!--	删除所有数据-->
+	<delete id="deleteAll" >
+	   TRUNCATE TABLE BCS_CTAX immediate
+-- 		DELETE FROM BCS_CTAX
+	</delete>
+</mapper>

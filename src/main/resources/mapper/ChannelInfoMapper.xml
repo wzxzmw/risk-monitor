@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.ChannelInfoDao">
+
+	<resultMap id="RM_ChannelInfo" type="com.beebank.monitor.entity.ChannelInfo">
+		<result property="own" column="OWN"/>
+		<result property="channelName" column="CHANNEL_NAME"/>
+		<result property="target" column="TARGET"/>
+		<result property="config" column="CONFIG"/>
+		<result property="orgid" column="ORGID"/>
+		<result property="userid" column="USERID"/>
+		<result property="regdate" column="REGDATE"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			OWN,CHANNEL_NAME,TARGET,CONFIG,ORGID,USERID,REGDATE
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="own">
+	<![CDATA[
+				INSERT INTO CHANNEL_INFO (
+					OWN ,
+					CHANNEL_NAME ,
+					TARGET ,
+					CONFIG ,
+					ORGID ,
+					USERID
+				) VALUES (
+					#{own} ,
+					#{channelName} ,
+					#{target} ,
+					#{config} ,
+					#{orgid} ,
+					#{userid}
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO CHANNEL_INFO (
+						OWN ,
+						CHANNEL_NAME ,
+						TARGET ,
+						CONFIG ,
+						ORGID ,
+						USERID
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.own} ,
+	#{item.channelName} ,
+	#{item.target} ,
+	#{item.config} ,
+	#{item.orgid} ,
+	#{item.userid}
+			)
+	</foreach>
+
+	</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="channelName != null and channelName != ''">
+	CHANNEL_NAME = #{channelName} ,
+			</if>
+	<if test="target != null and target != ''">
+	TARGET = #{target} ,
+			</if>
+	<if test="config != null and config != ''">
+	CONFIG = #{config} ,
+			</if>
+	<if test="orgid != null and orgid != ''">
+	ORGID = #{orgid} ,
+			</if>
+	<if test="userid != null and userid != ''">
+	USERID = #{userid} ,
+			</if>
+		<if test="regdate != null">
+			REGDATE = #{regdate} 
+	</if>
+	</set>
+	</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE CHANNEL_INFO
+	<include refid="update_sql" />
+	WHERE
+	OWN = #{own} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE CHANNEL_INFO
+	<include refid="update_sql" />
+		WHERE
+	OWN IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM CHANNEL_INFO
+				WHERE
+					OWN = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM CHANNEL_INFO
+		WHERE OWN IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_ChannelInfo">
+		SELECT
+	<include refid="columns" />
+		FROM CHANNEL_INFO
+		WHERE
+		OWN = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+	<if test="own != null and own !=''">
+		AND OWN = #{own}
+	</if>
+	<if test="channelName != null and channelName !=''">
+		AND CHANNEL_NAME = #{channelName}
+	</if>
+	<if test="target != null and target !=''">
+		AND TARGET = #{target}
+	</if>
+	<if test="config != null and config !=''">
+		AND CONFIG = #{config}
+	</if>
+	<if test="orgid != null and orgid !=''">
+		AND ORGID = #{orgid}
+	</if>
+	<if test="userid != null and userid !=''">
+		AND USERID = #{userid}
+	</if>
+		<if test="regdate != null">
+			AND REGDATE = #{regdate}
+		</if>
+	</where>
+	</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_ChannelInfo" parameterType="com.beebank.monitor.entity.ChannelInfo">
+		SELECT
+		<include refid="columns" />
+		FROM CHANNEL_INFO
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM CHANNEL_INFO
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_ChannelInfo" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM CHANNEL_INFO
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+</mapper>

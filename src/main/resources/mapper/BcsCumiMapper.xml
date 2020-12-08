@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.BcsCumiDao">
+
+	<resultMap id="RM_BcsCumi" type="com.beebank.monitor.entity.BcsCumi">
+		<result property="deli" column="DELI"/>
+		<result property="instNo" column="INST_NO"/>
+		<result property="custNo" column="CUST_NO"/>
+		<result property="shortName" column="SHORT_NAME"/>
+		<result property="taxBasis" column="TAX_BASIS"/>
+		<result property="taxBranch" column="TAX_BRANCH"/>
+		<result property="communeCode" column="COMMUNE_CODE"/>
+		<result property="firmScope" column="FIRM_SCOPE"/>
+		<result property="emailAdd1" column="EMAIL_ADD1"/>
+		<result property="emailAdd2" column="EMAIL_ADD2"/>
+		<result property="creditorCode" column="CREDITOR_CODE"/>
+		<result property="educationCode" column="EDUCATION_CODE"/>
+		<result property="accessChan1" column="ACCESS_CHAN_1"/>
+		<result property="accessChan2" column="ACCESS_CHAN_2"/>
+		<result property="accessChan3" column="ACCESS_CHAN_3"/>
+		<result property="accessChan4" column="ACCESS_CHAN_4"/>
+		<result property="accessChan5" column="ACCESS_CHAN_5"/>
+		<result property="accessChan6" column="ACCESS_CHAN_6"/>
+		<result property="accessChan7" column="ACCESS_CHAN_7"/>
+		<result property="accessChan8" column="ACCESS_CHAN_8"/>
+		<result property="accessChan9" column="ACCESS_CHAN_9"/>
+		<result property="accessChan10" column="ACCESS_CHAN_10"/>
+		<result property="accessChan11" column="ACCESS_CHAN_11"/>
+		<result property="accessChan12" column="ACCESS_CHAN_12"/>
+		<result property="accessChan13" column="ACCESS_CHAN_13"/>
+		<result property="accessChan14" column="ACCESS_CHAN_14"/>
+		<result property="accessChan15" column="ACCESS_CHAN_15"/>
+		<result property="accessChan16" column="ACCESS_CHAN_16"/>
+		<result property="accessChan17" column="ACCESS_CHAN_17"/>
+		<result property="accessChan18" column="ACCESS_CHAN_18"/>
+		<result property="accessChan19" column="ACCESS_CHAN_19"/>
+		<result property="accessChan20" column="ACCESS_CHAN_20"/>
+		<result property="creditRanking" column="CREDIT_RANKING"/>
+		<result property="pdsLawAgree" column="PDS_LAW_AGREE"/>
+		<result property="wtcPostFlag" column="WTC_POST_FLAG"/>
+		<result property="custEntrySrc" column="CUST_ENTRY_SRC"/>
+		<result property="dmaAcct" column="DMA_ACCT"/>
+		<result property="dmaAdvertise" column="DMA_ADVERTISE"/>
+		<result property="fcyBusType" column="FCY_BUS_TYPE"/>
+		<result property="fcyRepayMeth" column="FCY_REPAY_METH"/>
+		<result property="fcyGrpAcctno" column="FCY_GRP_ACCTNO"/>
+		<result property="fcyGrpName" column="FCY_GRP_NAME"/>
+		<result property="fcyIdType" column="FCY_ID_TYPE"/>
+		<result property="fcyPrStffId" column="FCY_PR_STFF_ID"/>
+		<result property="fcyExrtcls" column="FCY_EXRTCLS"/>
+		<result property="fcyVirtualAc" column="FCY_VIRTUAL_AC"/>
+		<result property="fcyLoanCspro" column="FCY_LOAN_CSPRO"/>
+		<result property="lstMntDate" column="LST_MNT_DATE"/>
+		<result property="lstMntTell" column="LST_MNT_TELL"/>
+		<result property="lstMntBrNo" column="LST_MNT_BR_NO"/>
+		<result property="companyEname" column="COMPANY_ENAME"/>
+		<result property="holdingsFlag" column="HOLDINGS_FLAG"/>
+		<result property="holdingsName1" column="HOLDINGS_NAME1"/>
+		<result property="holdingsAmt1" column="HOLDINGS_AMT1"/>
+		<result property="holdingsName2" column="HOLDINGS_NAME2"/>
+		<result property="holdingsAmt2" column="HOLDINGS_AMT2"/>
+		<result property="holdingsName3" column="HOLDINGS_NAME3"/>
+		<result property="holdingsAmt3" column="HOLDINGS_AMT3"/>
+		<result property="holdingsName4" column="HOLDINGS_NAME4"/>
+		<result property="holdingsAmt4" column="HOLDINGS_AMT4"/>
+		<result property="holdingsName5" column="HOLDINGS_NAME5"/>
+		<result property="holdingsAmt5" column="HOLDINGS_AMT5"/>
+		<result property="consStmtFreq" column="CONS_STMT_FREQ"/>
+		<result property="contactByTel" column="CONTACT_BY_TEL"/>
+		<result property="wealthMgrId" column="WEALTH_MGR_ID"/>
+		<result property="name1" column="NAME_1"/>
+		<result property="name2" column="NAME_2"/>
+		<result property="stmtPostMethod" column="STMT_POST_METHOD"/>
+		<result property="custTitle" column="CUST_TITLE"/>
+		<result property="bocCustFlag" column="BOC_CUST_FLAG"/>
+		<result property="bocEmployeeFlag" column="BOC_EMPLOYEE_FLAG"/>
+		<result property="blackFlag" column="BLACK_FLAG"/>
+		<result property="deathDate" column="DEATH_DATE"/>
+		<result property="othInf" column="OTH_INF"/>
+		<result property="birthPlace" column="BIRTH_PLACE"/>
+		<result property="vipCode" column="VIP_CODE"/>
+		<result property="vipNo" column="VIP_NO"/>
+		<result property="rshpCustFlag" column="RSHP_CUST_FLAG"/>
+		<result property="resContry" column="RES_CONTRY"/>
+		<result property="ctctName" column="CTCT_NAME"/>
+		<result property="ctctTel" column="CTCT_TEL"/>
+		<result property="writeOffDate" column="WRITE_OFF_DATE"/>
+		<result property="miInf" column="MI_INF"/>
+		<result property="authPerson" column="AUTH_PERSON"/>
+		<result property="leglRptvIdType" column="LEGL_RPTV_ID_TYPE"/>
+		<result property="leglRptvIdNo" column="LEGL_RPTV_ID_NO"/>
+		<result property="cmopSize" column="CMOP_SIZE"/>
+		<result property="groupFlag" column="GROUP_FLAG"/>
+		<result property="annuityDate" column="ANNUITY_DATE"/>
+		<result property="annuSuppDate" column="ANNU_SUPP_DATE"/>
+		<result property="annuTrustee" column="ANNU_TRUSTEE"/>
+		<result property="annuTrustor" column="ANNU_TRUSTOR"/>
+		<result property="annuityMngName" column="ANNUITY_MNG_NAME"/>
+		<result property="alias" column="ALIAS"/>
+		<result property="frgnName" column="FRGN_NAME"/>
+		<result property="custLevel" column="CUST_LEVEL"/>
+		<result property="fxBureauCode" column="FX_BUREAU_CODE"/>
+		<result property="leglRptvExpdt" column="LEGL_RPTV_EXPDT"/>
+		<result property="leglRptvPhone" column="LEGL_RPTV_PHONE"/>
+		<result property="shareHoldPerson" column="SHARE_HOLD_PERSON"/>
+		<result property="sharePerIdty" column="SHARE_PER_IDTY"/>
+		<result property="sharePerIdnum" column="SHARE_PER_IDNUM"/>
+		<result property="shareIdExpdt" column="SHARE_ID_EXPDT"/>
+		<result property="sharePerPhone" column="SHARE_PER_PHONE"/>
+		<result property="companyName" column="COMPANY_NAME"/>
+		<result property="companyNature" column="COMPANY_NATURE"/>
+		<result property="namePinyin" column="NAME_PINYIN"/>
+		<result property="national" column="NATIONAL"/>
+		<result property="reservedPhone" column="RESERVED_PHONE"/>
+		<result property="accountsInumber" column="ACCOUNTS_I_NUMBER"/>
+		<result property="isPayrollCil" column="IS_PAYROLL_CIL"/>
+		<result property="lastMaintDate" column="LAST_MAINT_DATE"/>
+		<result property="lastMaintStat" column="LAST_MAINT_STAT"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			DELI,INST_NO,CUST_NO,SHORT_NAME,TAX_BASIS,TAX_BRANCH,COMMUNE_CODE,FIRM_SCOPE,EMAIL_ADD1,EMAIL_ADD2,CREDITOR_CODE,EDUCATION_CODE,ACCESS_CHAN_1,ACCESS_CHAN_2,ACCESS_CHAN_3,ACCESS_CHAN_4,ACCESS_CHAN_5,ACCESS_CHAN_6,ACCESS_CHAN_7,ACCESS_CHAN_8,ACCESS_CHAN_9,ACCESS_CHAN_10,ACCESS_CHAN_11,ACCESS_CHAN_12,ACCESS_CHAN_13,ACCESS_CHAN_14,ACCESS_CHAN_15,ACCESS_CHAN_16,ACCESS_CHAN_17,ACCESS_CHAN_18,ACCESS_CHAN_19,ACCESS_CHAN_20,CREDIT_RANKING,PDS_LAW_AGREE,WTC_POST_FLAG,CUST_ENTRY_SRC,DMA_ACCT,DMA_ADVERTISE,FCY_BUS_TYPE,FCY_REPAY_METH,FCY_GRP_ACCTNO,FCY_GRP_NAME,FCY_ID_TYPE,FCY_PR_STFF_ID,FCY_EXRTCLS,FCY_VIRTUAL_AC,FCY_LOAN_CSPRO,LST_MNT_DATE,LST_MNT_TELL,LST_MNT_BR_NO,COMPANY_ENAME,HOLDINGS_FLAG,HOLDINGS_NAME1,HOLDINGS_AMT1,HOLDINGS_NAME2,HOLDINGS_AMT2,HOLDINGS_NAME3,HOLDINGS_AMT3,HOLDINGS_NAME4,HOLDINGS_AMT4,HOLDINGS_NAME5,HOLDINGS_AMT5,CONS_STMT_FREQ,CONTACT_BY_TEL,WEALTH_MGR_ID,NAME_1,NAME_2,STMT_POST_METHOD,CUST_TITLE,BOC_CUST_FLAG,BOC_EMPLOYEE_FLAG,BLACK_FLAG,DEATH_DATE,OTH_INF,BIRTH_PLACE,VIP_CODE,VIP_NO,RSHP_CUST_FLAG,RES_CONTRY,CTCT_NAME,CTCT_TEL,WRITE_OFF_DATE,MI_INF,AUTH_PERSON,LEGL_RPTV_ID_TYPE,LEGL_RPTV_ID_NO,CMOP_SIZE,GROUP_FLAG,ANNUITY_DATE,ANNU_SUPP_DATE,ANNU_TRUSTEE,ANNU_TRUSTOR,ANNUITY_MNG_NAME,ALIAS,FRGN_NAME,CUST_LEVEL,FX_BUREAU_CODE,LEGL_RPTV_EXPDT,LEGL_RPTV_PHONE,SHARE_HOLD_PERSON,SHARE_PER_IDTY,SHARE_PER_IDNUM,SHARE_ID_EXPDT,SHARE_PER_PHONE,COMPANY_NAME,COMPANY_NATURE,NAME_PINYIN,NATIONAL,RESERVED_PHONE,ACCOUNTS_I_NUMBER,IS_PAYROLL_CIL,LAST_MAINT_DATE,LAST_MAINT_STAT
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="instNo">
+	<![CDATA[
+				INSERT INTO BCS_CUMI (
+					DELI ,
+					INST_NO ,
+					CUST_NO ,
+					SHORT_NAME ,
+					TAX_BASIS ,
+					TAX_BRANCH ,
+					COMMUNE_CODE ,
+					FIRM_SCOPE ,
+					EMAIL_ADD1 ,
+					EMAIL_ADD2 ,
+					CREDITOR_CODE ,
+					EDUCATION_CODE ,
+					ACCESS_CHAN_1 ,
+					ACCESS_CHAN_2 ,
+					ACCESS_CHAN_3 ,
+					ACCESS_CHAN_4 ,
+					ACCESS_CHAN_5 ,
+					ACCESS_CHAN_6 ,
+					ACCESS_CHAN_7 ,
+					ACCESS_CHAN_8 ,
+					ACCESS_CHAN_9 ,
+					ACCESS_CHAN_10 ,
+					ACCESS_CHAN_11 ,
+					ACCESS_CHAN_12 ,
+					ACCESS_CHAN_13 ,
+					ACCESS_CHAN_14 ,
+					ACCESS_CHAN_15 ,
+					ACCESS_CHAN_16 ,
+					ACCESS_CHAN_17 ,
+					ACCESS_CHAN_18 ,
+					ACCESS_CHAN_19 ,
+					ACCESS_CHAN_20 ,
+					CREDIT_RANKING ,
+					PDS_LAW_AGREE ,
+					WTC_POST_FLAG ,
+					CUST_ENTRY_SRC ,
+					DMA_ACCT ,
+					DMA_ADVERTISE ,
+					FCY_BUS_TYPE ,
+					FCY_REPAY_METH ,
+					FCY_GRP_ACCTNO ,
+					FCY_GRP_NAME ,
+					FCY_ID_TYPE ,
+					FCY_PR_STFF_ID ,
+					FCY_EXRTCLS ,
+					FCY_VIRTUAL_AC ,
+					FCY_LOAN_CSPRO ,
+					LST_MNT_DATE ,
+					LST_MNT_TELL ,
+					LST_MNT_BR_NO ,
+					COMPANY_ENAME ,
+					HOLDINGS_FLAG ,
+					HOLDINGS_NAME1 ,
+					HOLDINGS_AMT1 ,
+					HOLDINGS_NAME2 ,
+					HOLDINGS_AMT2 ,
+					HOLDINGS_NAME3 ,
+					HOLDINGS_AMT3 ,
+					HOLDINGS_NAME4 ,
+					HOLDINGS_AMT4 ,
+					HOLDINGS_NAME5 ,
+					HOLDINGS_AMT5 ,
+					CONS_STMT_FREQ ,
+					CONTACT_BY_TEL ,
+					WEALTH_MGR_ID ,
+					NAME_1 ,
+					NAME_2 ,
+					STMT_POST_METHOD ,
+					CUST_TITLE ,
+					BOC_CUST_FLAG ,
+					BOC_EMPLOYEE_FLAG ,
+					BLACK_FLAG ,
+					DEATH_DATE ,
+					OTH_INF ,
+					BIRTH_PLACE ,
+					VIP_CODE ,
+					VIP_NO ,
+					RSHP_CUST_FLAG ,
+					RES_CONTRY ,
+					CTCT_NAME ,
+					CTCT_TEL ,
+					WRITE_OFF_DATE ,
+					MI_INF ,
+					AUTH_PERSON ,
+					LEGL_RPTV_ID_TYPE ,
+					LEGL_RPTV_ID_NO ,
+					CMOP_SIZE ,
+					GROUP_FLAG ,
+					ANNUITY_DATE ,
+					ANNU_SUPP_DATE ,
+					ANNU_TRUSTEE ,
+					ANNU_TRUSTOR ,
+					ANNUITY_MNG_NAME ,
+					ALIAS ,
+					FRGN_NAME ,
+					CUST_LEVEL ,
+					FX_BUREAU_CODE ,
+					LEGL_RPTV_EXPDT ,
+					LEGL_RPTV_PHONE ,
+					SHARE_HOLD_PERSON ,
+					SHARE_PER_IDTY ,
+					SHARE_PER_IDNUM ,
+					SHARE_ID_EXPDT ,
+					SHARE_PER_PHONE ,
+					COMPANY_NAME ,
+					COMPANY_NATURE ,
+					NAME_PINYIN ,
+					NATIONAL ,
+					RESERVED_PHONE ,
+					ACCOUNTS_I_NUMBER ,
+					IS_PAYROLL_CIL ,
+					LAST_MAINT_DATE ,
+					LAST_MAINT_STAT 
+				) VALUES (
+					#{deli} ,
+					#{instNo} ,
+					#{custNo} ,
+					#{shortName} ,
+					#{taxBasis} ,
+					#{taxBranch} ,
+					#{communeCode} ,
+					#{firmScope} ,
+					#{emailAdd1} ,
+					#{emailAdd2} ,
+					#{creditorCode} ,
+					#{educationCode} ,
+					#{accessChan1} ,
+					#{accessChan2} ,
+					#{accessChan3} ,
+					#{accessChan4} ,
+					#{accessChan5} ,
+					#{accessChan6} ,
+					#{accessChan7} ,
+					#{accessChan8} ,
+					#{accessChan9} ,
+					#{accessChan10} ,
+					#{accessChan11} ,
+					#{accessChan12} ,
+					#{accessChan13} ,
+					#{accessChan14} ,
+					#{accessChan15} ,
+					#{accessChan16} ,
+					#{accessChan17} ,
+					#{accessChan18} ,
+					#{accessChan19} ,
+					#{accessChan20} ,
+					#{creditRanking} ,
+					#{pdsLawAgree} ,
+					#{wtcPostFlag} ,
+					#{custEntrySrc} ,
+					#{dmaAcct} ,
+					#{dmaAdvertise} ,
+					#{fcyBusType} ,
+					#{fcyRepayMeth} ,
+					#{fcyGrpAcctno} ,
+					#{fcyGrpName} ,
+					#{fcyIdType} ,
+					#{fcyPrStffId} ,
+					#{fcyExrtcls} ,
+					#{fcyVirtualAc} ,
+					#{fcyLoanCspro} ,
+					#{lstMntDate} ,
+					#{lstMntTell} ,
+					#{lstMntBrNo} ,
+					#{companyEname} ,
+					#{holdingsFlag} ,
+					#{holdingsName1} ,
+					#{holdingsAmt1} ,
+					#{holdingsName2} ,
+					#{holdingsAmt2} ,
+					#{holdingsName3} ,
+					#{holdingsAmt3} ,
+					#{holdingsName4} ,
+					#{holdingsAmt4} ,
+					#{holdingsName5} ,
+					#{holdingsAmt5} ,
+					#{consStmtFreq} ,
+					#{contactByTel} ,
+					#{wealthMgrId} ,
+					#{name1} ,
+					#{name2} ,
+					#{stmtPostMethod} ,
+					#{custTitle} ,
+					#{bocCustFlag} ,
+					#{bocEmployeeFlag} ,
+					#{blackFlag} ,
+					#{deathDate} ,
+					#{othInf} ,
+					#{birthPlace} ,
+					#{vipCode} ,
+					#{vipNo} ,
+					#{rshpCustFlag} ,
+					#{resContry} ,
+					#{ctctName} ,
+					#{ctctTel} ,
+					#{writeOffDate} ,
+					#{miInf} ,
+					#{authPerson} ,
+					#{leglRptvIdType} ,
+					#{leglRptvIdNo} ,
+					#{cmopSize} ,
+					#{groupFlag} ,
+					#{annuityDate} ,
+					#{annuSuppDate} ,
+					#{annuTrustee} ,
+					#{annuTrustor} ,
+					#{annuityMngName} ,
+					#{alias} ,
+					#{frgnName} ,
+					#{custLevel} ,
+					#{fxBureauCode} ,
+					#{leglRptvExpdt} ,
+					#{leglRptvPhone} ,
+					#{shareHoldPerson} ,
+					#{sharePerIdty} ,
+					#{sharePerIdnum} ,
+					#{shareIdExpdt} ,
+					#{sharePerPhone} ,
+					#{companyName} ,
+					#{companyNature} ,
+					#{namePinyin} ,
+					#{national} ,
+					#{reservedPhone} ,
+					#{accountsInumber} ,
+					#{isPayrollCil} ,
+					#{lastMaintDate} ,
+					#{lastMaintStat} 
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO BCS_CUMI (
+						DELI ,
+						INST_NO ,
+						CUST_NO ,
+						SHORT_NAME ,
+						TAX_BASIS ,
+						TAX_BRANCH ,
+						COMMUNE_CODE ,
+						FIRM_SCOPE ,
+						EMAIL_ADD1 ,
+						EMAIL_ADD2 ,
+						CREDITOR_CODE ,
+						EDUCATION_CODE ,
+						ACCESS_CHAN_1 ,
+						ACCESS_CHAN_2 ,
+						ACCESS_CHAN_3 ,
+						ACCESS_CHAN_4 ,
+						ACCESS_CHAN_5 ,
+						ACCESS_CHAN_6 ,
+						ACCESS_CHAN_7 ,
+						ACCESS_CHAN_8 ,
+						ACCESS_CHAN_9 ,
+						ACCESS_CHAN_10 ,
+						ACCESS_CHAN_11 ,
+						ACCESS_CHAN_12 ,
+						ACCESS_CHAN_13 ,
+						ACCESS_CHAN_14 ,
+						ACCESS_CHAN_15 ,
+						ACCESS_CHAN_16 ,
+						ACCESS_CHAN_17 ,
+						ACCESS_CHAN_18 ,
+						ACCESS_CHAN_19 ,
+						ACCESS_CHAN_20 ,
+						CREDIT_RANKING ,
+						PDS_LAW_AGREE ,
+						WTC_POST_FLAG ,
+						CUST_ENTRY_SRC ,
+						DMA_ACCT ,
+						DMA_ADVERTISE ,
+						FCY_BUS_TYPE ,
+						FCY_REPAY_METH ,
+						FCY_GRP_ACCTNO ,
+						FCY_GRP_NAME ,
+						FCY_ID_TYPE ,
+						FCY_PR_STFF_ID ,
+						FCY_EXRTCLS ,
+						FCY_VIRTUAL_AC ,
+						FCY_LOAN_CSPRO ,
+						LST_MNT_DATE ,
+						LST_MNT_TELL ,
+						LST_MNT_BR_NO ,
+						COMPANY_ENAME ,
+						HOLDINGS_FLAG ,
+						HOLDINGS_NAME1 ,
+						HOLDINGS_AMT1 ,
+						HOLDINGS_NAME2 ,
+						HOLDINGS_AMT2 ,
+						HOLDINGS_NAME3 ,
+						HOLDINGS_AMT3 ,
+						HOLDINGS_NAME4 ,
+						HOLDINGS_AMT4 ,
+						HOLDINGS_NAME5 ,
+						HOLDINGS_AMT5 ,
+						CONS_STMT_FREQ ,
+						CONTACT_BY_TEL ,
+						WEALTH_MGR_ID ,
+						NAME_1 ,
+						NAME_2 ,
+						STMT_POST_METHOD ,
+						CUST_TITLE ,
+						BOC_CUST_FLAG ,
+						BOC_EMPLOYEE_FLAG ,
+						BLACK_FLAG ,
+						DEATH_DATE ,
+						OTH_INF ,
+						BIRTH_PLACE ,
+						VIP_CODE ,
+						VIP_NO ,
+						RSHP_CUST_FLAG ,
+						RES_CONTRY ,
+						CTCT_NAME ,
+						CTCT_TEL ,
+						WRITE_OFF_DATE ,
+						MI_INF ,
+						AUTH_PERSON ,
+						LEGL_RPTV_ID_TYPE ,
+						LEGL_RPTV_ID_NO ,
+						CMOP_SIZE ,
+						GROUP_FLAG ,
+						ANNUITY_DATE ,
+						ANNU_SUPP_DATE ,
+						ANNU_TRUSTEE ,
+						ANNU_TRUSTOR ,
+						ANNUITY_MNG_NAME ,
+						ALIAS ,
+						FRGN_NAME ,
+						CUST_LEVEL ,
+						FX_BUREAU_CODE ,
+						LEGL_RPTV_EXPDT ,
+						LEGL_RPTV_PHONE ,
+						SHARE_HOLD_PERSON ,
+						SHARE_PER_IDTY ,
+						SHARE_PER_IDNUM ,
+						SHARE_ID_EXPDT ,
+						SHARE_PER_PHONE ,
+						COMPANY_NAME ,
+						COMPANY_NATURE ,
+						NAME_PINYIN ,
+						NATIONAL ,
+						RESERVED_PHONE ,
+						ACCOUNTS_I_NUMBER ,
+						IS_PAYROLL_CIL ,
+						LAST_MAINT_DATE ,
+						LAST_MAINT_STAT 
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.deli} ,
+	#{item.instNo} ,
+	#{item.custNo} ,
+	#{item.shortName} ,
+	#{item.taxBasis} ,
+	#{item.taxBranch} ,
+	#{item.communeCode} ,
+	#{item.firmScope} ,
+	#{item.emailAdd1} ,
+	#{item.emailAdd2} ,
+	#{item.creditorCode} ,
+	#{item.educationCode} ,
+	#{item.accessChan1} ,
+	#{item.accessChan2} ,
+	#{item.accessChan3} ,
+	#{item.accessChan4} ,
+	#{item.accessChan5} ,
+	#{item.accessChan6} ,
+	#{item.accessChan7} ,
+	#{item.accessChan8} ,
+	#{item.accessChan9} ,
+	#{item.accessChan10} ,
+	#{item.accessChan11} ,
+	#{item.accessChan12} ,
+	#{item.accessChan13} ,
+	#{item.accessChan14} ,
+	#{item.accessChan15} ,
+	#{item.accessChan16} ,
+	#{item.accessChan17} ,
+	#{item.accessChan18} ,
+	#{item.accessChan19} ,
+	#{item.accessChan20} ,
+	#{item.creditRanking} ,
+	#{item.pdsLawAgree} ,
+	#{item.wtcPostFlag} ,
+	#{item.custEntrySrc} ,
+	#{item.dmaAcct} ,
+	#{item.dmaAdvertise} ,
+	#{item.fcyBusType} ,
+	#{item.fcyRepayMeth} ,
+	#{item.fcyGrpAcctno} ,
+	#{item.fcyGrpName} ,
+	#{item.fcyIdType} ,
+	#{item.fcyPrStffId} ,
+	#{item.fcyExrtcls} ,
+	#{item.fcyVirtualAc} ,
+	#{item.fcyLoanCspro} ,
+	#{item.lstMntDate} ,
+	#{item.lstMntTell} ,
+	#{item.lstMntBrNo} ,
+	#{item.companyEname} ,
+	#{item.holdingsFlag} ,
+	#{item.holdingsName1} ,
+	#{item.holdingsAmt1} ,
+	#{item.holdingsName2} ,
+	#{item.holdingsAmt2} ,
+	#{item.holdingsName3} ,
+	#{item.holdingsAmt3} ,
+	#{item.holdingsName4} ,
+	#{item.holdingsAmt4} ,
+	#{item.holdingsName5} ,
+	#{item.holdingsAmt5} ,
+	#{item.consStmtFreq} ,
+	#{item.contactByTel} ,
+	#{item.wealthMgrId} ,
+	#{item.name1} ,
+	#{item.name2} ,
+	#{item.stmtPostMethod} ,
+	#{item.custTitle} ,
+	#{item.bocCustFlag} ,
+	#{item.bocEmployeeFlag} ,
+	#{item.blackFlag} ,
+	#{item.deathDate} ,
+	#{item.othInf} ,
+	#{item.birthPlace} ,
+	#{item.vipCode} ,
+	#{item.vipNo} ,
+	#{item.rshpCustFlag} ,
+	#{item.resContry} ,
+	#{item.ctctName} ,
+	#{item.ctctTel} ,
+	#{item.writeOffDate} ,
+	#{item.miInf} ,
+	#{item.authPerson} ,
+	#{item.leglRptvIdType} ,
+	#{item.leglRptvIdNo} ,
+	#{item.cmopSize} ,
+	#{item.groupFlag} ,
+	#{item.annuityDate} ,
+	#{item.annuSuppDate} ,
+	#{item.annuTrustee} ,
+	#{item.annuTrustor} ,
+	#{item.annuityMngName} ,
+	#{item.alias} ,
+	#{item.frgnName} ,
+	#{item.custLevel} ,
+	#{item.fxBureauCode} ,
+	#{item.leglRptvExpdt} ,
+	#{item.leglRptvPhone} ,
+	#{item.shareHoldPerson} ,
+	#{item.sharePerIdty} ,
+	#{item.sharePerIdnum} ,
+	#{item.shareIdExpdt} ,
+	#{item.sharePerPhone} ,
+	#{item.companyName} ,
+	#{item.companyNature} ,
+	#{item.namePinyin} ,
+	#{item.national} ,
+	#{item.reservedPhone} ,
+	#{item.accountsInumber} ,
+	#{item.isPayrollCil} ,
+	#{item.lastMaintDate} ,
+	#{item.lastMaintStat} 
+			)
+			</foreach>
+
+			</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="deli != null and deli != ''">
+	DELI = #{deli} ,
+			</if>
+	<if test="shortName != null and shortName != ''">
+	SHORT_NAME = #{shortName} ,
+			</if>
+	<if test="taxBasis != null and taxBasis != ''">
+	TAX_BASIS = #{taxBasis} ,
+			</if>
+	<if test="taxBranch != null and taxBranch != ''">
+	TAX_BRANCH = #{taxBranch} ,
+			</if>
+	<if test="communeCode != null and communeCode != ''">
+	COMMUNE_CODE = #{communeCode} ,
+			</if>
+	<if test="firmScope != null and firmScope != ''">
+	FIRM_SCOPE = #{firmScope} ,
+			</if>
+	<if test="emailAdd1 != null and emailAdd1 != ''">
+	EMAIL_ADD1 = #{emailAdd1} ,
+			</if>
+	<if test="emailAdd2 != null and emailAdd2 != ''">
+	EMAIL_ADD2 = #{emailAdd2} ,
+			</if>
+	<if test="creditorCode != null and creditorCode != ''">
+	CREDITOR_CODE = #{creditorCode} ,
+			</if>
+	<if test="educationCode != null and educationCode != ''">
+	EDUCATION_CODE = #{educationCode} ,
+			</if>
+	<if test="accessChan1 != null and accessChan1 != ''">
+	ACCESS_CHAN_1 = #{accessChan1} ,
+			</if>
+	<if test="accessChan2 != null and accessChan2 != ''">
+	ACCESS_CHAN_2 = #{accessChan2} ,
+			</if>
+	<if test="accessChan3 != null and accessChan3 != ''">
+	ACCESS_CHAN_3 = #{accessChan3} ,
+			</if>
+	<if test="accessChan4 != null and accessChan4 != ''">
+	ACCESS_CHAN_4 = #{accessChan4} ,
+			</if>
+	<if test="accessChan5 != null and accessChan5 != ''">
+	ACCESS_CHAN_5 = #{accessChan5} ,
+			</if>
+	<if test="accessChan6 != null and accessChan6 != ''">
+	ACCESS_CHAN_6 = #{accessChan6} ,
+			</if>
+	<if test="accessChan7 != null and accessChan7 != ''">
+	ACCESS_CHAN_7 = #{accessChan7} ,
+			</if>
+	<if test="accessChan8 != null and accessChan8 != ''">
+	ACCESS_CHAN_8 = #{accessChan8} ,
+			</if>
+	<if test="accessChan9 != null and accessChan9 != ''">
+	ACCESS_CHAN_9 = #{accessChan9} ,
+			</if>
+	<if test="accessChan10 != null and accessChan10 != ''">
+	ACCESS_CHAN_10 = #{accessChan10} ,
+			</if>
+	<if test="accessChan11 != null and accessChan11 != ''">
+	ACCESS_CHAN_11 = #{accessChan11} ,
+			</if>
+	<if test="accessChan12 != null and accessChan12 != ''">
+	ACCESS_CHAN_12 = #{accessChan12} ,
+			</if>
+	<if test="accessChan13 != null and accessChan13 != ''">
+	ACCESS_CHAN_13 = #{accessChan13} ,
+			</if>
+	<if test="accessChan14 != null and accessChan14 != ''">
+	ACCESS_CHAN_14 = #{accessChan14} ,
+			</if>
+	<if test="accessChan15 != null and accessChan15 != ''">
+	ACCESS_CHAN_15 = #{accessChan15} ,
+			</if>
+	<if test="accessChan16 != null and accessChan16 != ''">
+	ACCESS_CHAN_16 = #{accessChan16} ,
+			</if>
+	<if test="accessChan17 != null and accessChan17 != ''">
+	ACCESS_CHAN_17 = #{accessChan17} ,
+			</if>
+	<if test="accessChan18 != null and accessChan18 != ''">
+	ACCESS_CHAN_18 = #{accessChan18} ,
+			</if>
+	<if test="accessChan19 != null and accessChan19 != ''">
+	ACCESS_CHAN_19 = #{accessChan19} ,
+			</if>
+	<if test="accessChan20 != null and accessChan20 != ''">
+	ACCESS_CHAN_20 = #{accessChan20} ,
+			</if>
+	<if test="creditRanking != null and creditRanking != ''">
+	CREDIT_RANKING = #{creditRanking} ,
+			</if>
+	<if test="pdsLawAgree != null and pdsLawAgree != ''">
+	PDS_LAW_AGREE = #{pdsLawAgree} ,
+			</if>
+	<if test="wtcPostFlag != null and wtcPostFlag != ''">
+	WTC_POST_FLAG = #{wtcPostFlag} ,
+			</if>
+	<if test="custEntrySrc != null and custEntrySrc != ''">
+	CUST_ENTRY_SRC = #{custEntrySrc} ,
+			</if>
+	<if test="dmaAcct != null and dmaAcct != ''">
+	DMA_ACCT = #{dmaAcct} ,
+			</if>
+	<if test="dmaAdvertise != null and dmaAdvertise != ''">
+	DMA_ADVERTISE = #{dmaAdvertise} ,
+			</if>
+	<if test="fcyBusType != null and fcyBusType != ''">
+	FCY_BUS_TYPE = #{fcyBusType} ,
+			</if>
+	<if test="fcyRepayMeth != null and fcyRepayMeth != ''">
+	FCY_REPAY_METH = #{fcyRepayMeth} ,
+			</if>
+	<if test="fcyGrpAcctno != null and fcyGrpAcctno != ''">
+	FCY_GRP_ACCTNO = #{fcyGrpAcctno} ,
+			</if>
+	<if test="fcyGrpName != null and fcyGrpName != ''">
+	FCY_GRP_NAME = #{fcyGrpName} ,
+			</if>
+	<if test="fcyIdType != null and fcyIdType != ''">
+	FCY_ID_TYPE = #{fcyIdType} ,
+			</if>
+	<if test="fcyPrStffId != null and fcyPrStffId != ''">
+	FCY_PR_STFF_ID = #{fcyPrStffId} ,
+			</if>
+	<if test="fcyExrtcls != null and fcyExrtcls != ''">
+	FCY_EXRTCLS = #{fcyExrtcls} ,
+			</if>
+	<if test="fcyVirtualAc != null and fcyVirtualAc != ''">
+	FCY_VIRTUAL_AC = #{fcyVirtualAc} ,
+			</if>
+	<if test="fcyLoanCspro != null and fcyLoanCspro != ''">
+	FCY_LOAN_CSPRO = #{fcyLoanCspro} ,
+			</if>
+	<if test="lstMntDate != null and lstMntDate != ''">
+	LST_MNT_DATE = #{lstMntDate} ,
+			</if>
+	<if test="lstMntTell != null and lstMntTell != ''">
+	LST_MNT_TELL = #{lstMntTell} ,
+			</if>
+	<if test="lstMntBrNo != null and lstMntBrNo != ''">
+	LST_MNT_BR_NO = #{lstMntBrNo} ,
+			</if>
+	<if test="companyEname != null and companyEname != ''">
+	COMPANY_ENAME = #{companyEname} ,
+			</if>
+	<if test="holdingsFlag != null and holdingsFlag != ''">
+	HOLDINGS_FLAG = #{holdingsFlag} ,
+			</if>
+	<if test="holdingsName1 != null and holdingsName1 != ''">
+	HOLDINGS_NAME1 = #{holdingsName1} ,
+			</if>
+	<if test="holdingsAmt1 != null">
+	HOLDINGS_AMT1 = #{holdingsAmt1} ,
+			</if>
+	<if test="holdingsName2 != null and holdingsName2 != ''">
+	HOLDINGS_NAME2 = #{holdingsName2} ,
+			</if>
+	<if test="holdingsAmt2 != null">
+	HOLDINGS_AMT2 = #{holdingsAmt2} ,
+			</if>
+	<if test="holdingsName3 != null and holdingsName3 != ''">
+	HOLDINGS_NAME3 = #{holdingsName3} ,
+			</if>
+	<if test="holdingsAmt3 != null">
+	HOLDINGS_AMT3 = #{holdingsAmt3} ,
+			</if>
+	<if test="holdingsName4 != null and holdingsName4 != ''">
+	HOLDINGS_NAME4 = #{holdingsName4} ,
+			</if>
+	<if test="holdingsAmt4 != null">
+	HOLDINGS_AMT4 = #{holdingsAmt4} ,
+			</if>
+	<if test="holdingsName5 != null and holdingsName5 != ''">
+	HOLDINGS_NAME5 = #{holdingsName5} ,
+			</if>
+	<if test="holdingsAmt5 != null">
+	HOLDINGS_AMT5 = #{holdingsAmt5} ,
+			</if>
+	<if test="consStmtFreq != null and consStmtFreq != ''">
+	CONS_STMT_FREQ = #{consStmtFreq} ,
+			</if>
+	<if test="contactByTel != null and contactByTel != ''">
+	CONTACT_BY_TEL = #{contactByTel} ,
+			</if>
+	<if test="wealthMgrId != null and wealthMgrId != ''">
+	WEALTH_MGR_ID = #{wealthMgrId} ,
+			</if>
+	<if test="name1 != null and name1 != ''">
+	NAME_1 = #{name1} ,
+			</if>
+	<if test="name2 != null and name2 != ''">
+	NAME_2 = #{name2} ,
+			</if>
+	<if test="stmtPostMethod != null and stmtPostMethod != ''">
+	STMT_POST_METHOD = #{stmtPostMethod} ,
+			</if>
+	<if test="custTitle != null and custTitle != ''">
+	CUST_TITLE = #{custTitle} ,
+			</if>
+	<if test="bocCustFlag != null and bocCustFlag != ''">
+	BOC_CUST_FLAG = #{bocCustFlag} ,
+			</if>
+	<if test="bocEmployeeFlag != null and bocEmployeeFlag != ''">
+	BOC_EMPLOYEE_FLAG = #{bocEmployeeFlag} ,
+			</if>
+	<if test="blackFlag != null and blackFlag != ''">
+	BLACK_FLAG = #{blackFlag} ,
+			</if>
+	<if test="deathDate != null and deathDate != ''">
+	DEATH_DATE = #{deathDate} ,
+			</if>
+	<if test="othInf != null and othInf != ''">
+	OTH_INF = #{othInf} ,
+			</if>
+	<if test="birthPlace != null and birthPlace != ''">
+	BIRTH_PLACE = #{birthPlace} ,
+			</if>
+	<if test="vipCode != null and vipCode != ''">
+	VIP_CODE = #{vipCode} ,
+			</if>
+	<if test="vipNo != null and vipNo != ''">
+	VIP_NO = #{vipNo} ,
+			</if>
+	<if test="rshpCustFlag != null and rshpCustFlag != ''">
+	RSHP_CUST_FLAG = #{rshpCustFlag} ,
+			</if>
+	<if test="resContry != null and resContry != ''">
+	RES_CONTRY = #{resContry} ,
+			</if>
+	<if test="ctctName != null and ctctName != ''">
+	CTCT_NAME = #{ctctName} ,
+			</if>
+	<if test="ctctTel != null and ctctTel != ''">
+	CTCT_TEL = #{ctctTel} ,
+			</if>
+	<if test="writeOffDate != null and writeOffDate != ''">
+	WRITE_OFF_DATE = #{writeOffDate} ,
+			</if>
+	<if test="miInf != null and miInf != ''">
+	MI_INF = #{miInf} ,
+			</if>
+	<if test="authPerson != null and authPerson != ''">
+	AUTH_PERSON = #{authPerson} ,
+			</if>
+	<if test="leglRptvIdType != null and leglRptvIdType != ''">
+	LEGL_RPTV_ID_TYPE = #{leglRptvIdType} ,
+			</if>
+	<if test="leglRptvIdNo != null and leglRptvIdNo != ''">
+	LEGL_RPTV_ID_NO = #{leglRptvIdNo} ,
+			</if>
+	<if test="cmopSize != null and cmopSize != ''">
+	CMOP_SIZE = #{cmopSize} ,
+			</if>
+	<if test="groupFlag != null and groupFlag != ''">
+	GROUP_FLAG = #{groupFlag} ,
+			</if>
+	<if test="annuityDate != null and annuityDate != ''">
+	ANNUITY_DATE = #{annuityDate} ,
+			</if>
+	<if test="annuSuppDate != null and annuSuppDate != ''">
+	ANNU_SUPP_DATE = #{annuSuppDate} ,
+			</if>
+	<if test="annuTrustee != null and annuTrustee != ''">
+	ANNU_TRUSTEE = #{annuTrustee} ,
+			</if>
+	<if test="annuTrustor != null and annuTrustor != ''">
+	ANNU_TRUSTOR = #{annuTrustor} ,
+			</if>
+	<if test="annuityMngName != null and annuityMngName != ''">
+	ANNUITY_MNG_NAME = #{annuityMngName} ,
+			</if>
+	<if test="alias != null and alias != ''">
+	ALIAS = #{alias} ,
+			</if>
+	<if test="frgnName != null and frgnName != ''">
+	FRGN_NAME = #{frgnName} ,
+			</if>
+	<if test="custLevel != null">
+	CUST_LEVEL = #{custLevel} ,
+			</if>
+	<if test="fxBureauCode != null and fxBureauCode != ''">
+	FX_BUREAU_CODE = #{fxBureauCode} ,
+			</if>
+	<if test="leglRptvExpdt != null">
+	LEGL_RPTV_EXPDT = #{leglRptvExpdt} ,
+			</if>
+	<if test="leglRptvPhone != null and leglRptvPhone != ''">
+	LEGL_RPTV_PHONE = #{leglRptvPhone} ,
+			</if>
+	<if test="shareHoldPerson != null and shareHoldPerson != ''">
+	SHARE_HOLD_PERSON = #{shareHoldPerson} ,
+			</if>
+	<if test="sharePerIdty != null and sharePerIdty != ''">
+	SHARE_PER_IDTY = #{sharePerIdty} ,
+			</if>
+	<if test="sharePerIdnum != null and sharePerIdnum != ''">
+	SHARE_PER_IDNUM = #{sharePerIdnum} ,
+			</if>
+	<if test="shareIdExpdt != null">
+	SHARE_ID_EXPDT = #{shareIdExpdt} ,
+			</if>
+	<if test="sharePerPhone != null and sharePerPhone != ''">
+	SHARE_PER_PHONE = #{sharePerPhone} ,
+			</if>
+	<if test="companyName != null and companyName != ''">
+	COMPANY_NAME = #{companyName} ,
+			</if>
+	<if test="companyNature != null and companyNature != ''">
+	COMPANY_NATURE = #{companyNature} ,
+			</if>
+	<if test="namePinyin != null and namePinyin != ''">
+	NAME_PINYIN = #{namePinyin} ,
+			</if>
+	<if test="national != null and national != ''">
+	NATIONAL = #{national} ,
+			</if>
+	<if test="reservedPhone != null and reservedPhone != ''">
+	RESERVED_PHONE = #{reservedPhone} ,
+			</if>
+	<if test="accountsInumber != null and accountsInumber != ''">
+	ACCOUNTS_I_NUMBER = #{accountsInumber} ,
+			</if>
+	<if test="isPayrollCil != null and isPayrollCil != ''">
+	IS_PAYROLL_CIL = #{isPayrollCil} ,
+			</if>
+	<if test="lastMaintDate != null and lastMaintDate != ''">
+	LAST_MAINT_DATE = #{lastMaintDate} ,
+			</if>
+	<if test="lastMaintStat != null and lastMaintStat != ''">
+	LAST_MAINT_STAT = #{lastMaintStat} 
+			</if>
+			</set>
+			</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE BCS_CUMI
+	<include refid="update_sql" />
+	WHERE
+	INST_NO = #{instNo}  AND
+	CUST_NO = #{custNo} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE BCS_CUMI
+	<include refid="update_sql" />
+		WHERE
+	INST_NOCUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM BCS_CUMI
+				WHERE
+					INST_NO = #{id}  AND 
+					CUST_NO = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM BCS_CUMI
+		WHERE INST_NO CUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_BcsCumi">
+		SELECT
+	<include refid="columns" />
+		FROM BCS_CUMI
+		WHERE
+		INST_NO = #{id}  AND 
+		CUST_NO = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+	<if test="deli != null and deli !=''">
+		AND DELI = #{deli}
+	</if>
+	<if test="instNo != null and instNo !=''">
+		AND INST_NO = #{instNo}
+	</if>
+	<if test="custNo != null and custNo !=''">
+		AND CUST_NO = #{custNo}
+	</if>
+	<if test="shortName != null and shortName !=''">
+		AND SHORT_NAME = #{shortName}
+	</if>
+	<if test="taxBasis != null and taxBasis !=''">
+		AND TAX_BASIS = #{taxBasis}
+	</if>
+	<if test="taxBranch != null and taxBranch !=''">
+		AND TAX_BRANCH = #{taxBranch}
+	</if>
+	<if test="communeCode != null and communeCode !=''">
+		AND COMMUNE_CODE = #{communeCode}
+	</if>
+	<if test="firmScope != null and firmScope !=''">
+		AND FIRM_SCOPE = #{firmScope}
+	</if>
+	<if test="emailAdd1 != null and emailAdd1 !=''">
+		AND EMAIL_ADD1 = #{emailAdd1}
+	</if>
+	<if test="emailAdd2 != null and emailAdd2 !=''">
+		AND EMAIL_ADD2 = #{emailAdd2}
+	</if>
+	<if test="creditorCode != null and creditorCode !=''">
+		AND CREDITOR_CODE = #{creditorCode}
+	</if>
+	<if test="educationCode != null and educationCode !=''">
+		AND EDUCATION_CODE = #{educationCode}
+	</if>
+	<if test="accessChan1 != null and accessChan1 !=''">
+		AND ACCESS_CHAN_1 = #{accessChan1}
+	</if>
+	<if test="accessChan2 != null and accessChan2 !=''">
+		AND ACCESS_CHAN_2 = #{accessChan2}
+	</if>
+	<if test="accessChan3 != null and accessChan3 !=''">
+		AND ACCESS_CHAN_3 = #{accessChan3}
+	</if>
+	<if test="accessChan4 != null and accessChan4 !=''">
+		AND ACCESS_CHAN_4 = #{accessChan4}
+	</if>
+	<if test="accessChan5 != null and accessChan5 !=''">
+		AND ACCESS_CHAN_5 = #{accessChan5}
+	</if>
+	<if test="accessChan6 != null and accessChan6 !=''">
+		AND ACCESS_CHAN_6 = #{accessChan6}
+	</if>
+	<if test="accessChan7 != null and accessChan7 !=''">
+		AND ACCESS_CHAN_7 = #{accessChan7}
+	</if>
+	<if test="accessChan8 != null and accessChan8 !=''">
+		AND ACCESS_CHAN_8 = #{accessChan8}
+	</if>
+	<if test="accessChan9 != null and accessChan9 !=''">
+		AND ACCESS_CHAN_9 = #{accessChan9}
+	</if>
+	<if test="accessChan10 != null and accessChan10 !=''">
+		AND ACCESS_CHAN_10 = #{accessChan10}
+	</if>
+	<if test="accessChan11 != null and accessChan11 !=''">
+		AND ACCESS_CHAN_11 = #{accessChan11}
+	</if>
+	<if test="accessChan12 != null and accessChan12 !=''">
+		AND ACCESS_CHAN_12 = #{accessChan12}
+	</if>
+	<if test="accessChan13 != null and accessChan13 !=''">
+		AND ACCESS_CHAN_13 = #{accessChan13}
+	</if>
+	<if test="accessChan14 != null and accessChan14 !=''">
+		AND ACCESS_CHAN_14 = #{accessChan14}
+	</if>
+	<if test="accessChan15 != null and accessChan15 !=''">
+		AND ACCESS_CHAN_15 = #{accessChan15}
+	</if>
+	<if test="accessChan16 != null and accessChan16 !=''">
+		AND ACCESS_CHAN_16 = #{accessChan16}
+	</if>
+	<if test="accessChan17 != null and accessChan17 !=''">
+		AND ACCESS_CHAN_17 = #{accessChan17}
+	</if>
+	<if test="accessChan18 != null and accessChan18 !=''">
+		AND ACCESS_CHAN_18 = #{accessChan18}
+	</if>
+	<if test="accessChan19 != null and accessChan19 !=''">
+		AND ACCESS_CHAN_19 = #{accessChan19}
+	</if>
+	<if test="accessChan20 != null and accessChan20 !=''">
+		AND ACCESS_CHAN_20 = #{accessChan20}
+	</if>
+	<if test="creditRanking != null and creditRanking !=''">
+		AND CREDIT_RANKING = #{creditRanking}
+	</if>
+	<if test="pdsLawAgree != null and pdsLawAgree !=''">
+		AND PDS_LAW_AGREE = #{pdsLawAgree}
+	</if>
+	<if test="wtcPostFlag != null and wtcPostFlag !=''">
+		AND WTC_POST_FLAG = #{wtcPostFlag}
+	</if>
+	<if test="custEntrySrc != null and custEntrySrc !=''">
+		AND CUST_ENTRY_SRC = #{custEntrySrc}
+	</if>
+	<if test="dmaAcct != null and dmaAcct !=''">
+		AND DMA_ACCT = #{dmaAcct}
+	</if>
+	<if test="dmaAdvertise != null and dmaAdvertise !=''">
+		AND DMA_ADVERTISE = #{dmaAdvertise}
+	</if>
+	<if test="fcyBusType != null and fcyBusType !=''">
+		AND FCY_BUS_TYPE = #{fcyBusType}
+	</if>
+	<if test="fcyRepayMeth != null and fcyRepayMeth !=''">
+		AND FCY_REPAY_METH = #{fcyRepayMeth}
+	</if>
+	<if test="fcyGrpAcctno != null and fcyGrpAcctno !=''">
+		AND FCY_GRP_ACCTNO = #{fcyGrpAcctno}
+	</if>
+	<if test="fcyGrpName != null and fcyGrpName !=''">
+		AND FCY_GRP_NAME = #{fcyGrpName}
+	</if>
+	<if test="fcyIdType != null and fcyIdType !=''">
+		AND FCY_ID_TYPE = #{fcyIdType}
+	</if>
+	<if test="fcyPrStffId != null and fcyPrStffId !=''">
+		AND FCY_PR_STFF_ID = #{fcyPrStffId}
+	</if>
+	<if test="fcyExrtcls != null and fcyExrtcls !=''">
+		AND FCY_EXRTCLS = #{fcyExrtcls}
+	</if>
+	<if test="fcyVirtualAc != null and fcyVirtualAc !=''">
+		AND FCY_VIRTUAL_AC = #{fcyVirtualAc}
+	</if>
+	<if test="fcyLoanCspro != null and fcyLoanCspro !=''">
+		AND FCY_LOAN_CSPRO = #{fcyLoanCspro}
+	</if>
+	<if test="lstMntDate != null and lstMntDate !=''">
+		AND LST_MNT_DATE = #{lstMntDate}
+	</if>
+	<if test="lstMntTell != null and lstMntTell !=''">
+		AND LST_MNT_TELL = #{lstMntTell}
+	</if>
+	<if test="lstMntBrNo != null and lstMntBrNo !=''">
+		AND LST_MNT_BR_NO = #{lstMntBrNo}
+	</if>
+	<if test="companyEname != null and companyEname !=''">
+		AND COMPANY_ENAME = #{companyEname}
+	</if>
+	<if test="holdingsFlag != null and holdingsFlag !=''">
+		AND HOLDINGS_FLAG = #{holdingsFlag}
+	</if>
+	<if test="holdingsName1 != null and holdingsName1 !=''">
+		AND HOLDINGS_NAME1 = #{holdingsName1}
+	</if>
+		<if test="holdingsAmt1 != null">
+			AND HOLDINGS_AMT1 = #{holdingsAmt1}
+		</if>
+	<if test="holdingsName2 != null and holdingsName2 !=''">
+		AND HOLDINGS_NAME2 = #{holdingsName2}
+	</if>
+		<if test="holdingsAmt2 != null">
+			AND HOLDINGS_AMT2 = #{holdingsAmt2}
+		</if>
+	<if test="holdingsName3 != null and holdingsName3 !=''">
+		AND HOLDINGS_NAME3 = #{holdingsName3}
+	</if>
+		<if test="holdingsAmt3 != null">
+			AND HOLDINGS_AMT3 = #{holdingsAmt3}
+		</if>
+	<if test="holdingsName4 != null and holdingsName4 !=''">
+		AND HOLDINGS_NAME4 = #{holdingsName4}
+	</if>
+		<if test="holdingsAmt4 != null">
+			AND HOLDINGS_AMT4 = #{holdingsAmt4}
+		</if>
+	<if test="holdingsName5 != null and holdingsName5 !=''">
+		AND HOLDINGS_NAME5 = #{holdingsName5}
+	</if>
+		<if test="holdingsAmt5 != null">
+			AND HOLDINGS_AMT5 = #{holdingsAmt5}
+		</if>
+	<if test="consStmtFreq != null and consStmtFreq !=''">
+		AND CONS_STMT_FREQ = #{consStmtFreq}
+	</if>
+	<if test="contactByTel != null and contactByTel !=''">
+		AND CONTACT_BY_TEL = #{contactByTel}
+	</if>
+	<if test="wealthMgrId != null and wealthMgrId !=''">
+		AND WEALTH_MGR_ID = #{wealthMgrId}
+	</if>
+	<if test="name1 != null and name1 !=''">
+		AND NAME_1 = #{name1}
+	</if>
+	<if test="name2 != null and name2 !=''">
+		AND NAME_2 = #{name2}
+	</if>
+	<if test="stmtPostMethod != null and stmtPostMethod !=''">
+		AND STMT_POST_METHOD = #{stmtPostMethod}
+	</if>
+	<if test="custTitle != null and custTitle !=''">
+		AND CUST_TITLE = #{custTitle}
+	</if>
+	<if test="bocCustFlag != null and bocCustFlag !=''">
+		AND BOC_CUST_FLAG = #{bocCustFlag}
+	</if>
+	<if test="bocEmployeeFlag != null and bocEmployeeFlag !=''">
+		AND BOC_EMPLOYEE_FLAG = #{bocEmployeeFlag}
+	</if>
+	<if test="blackFlag != null and blackFlag !=''">
+		AND BLACK_FLAG = #{blackFlag}
+	</if>
+	<if test="deathDate != null and deathDate !=''">
+		AND DEATH_DATE = #{deathDate}
+	</if>
+	<if test="othInf != null and othInf !=''">
+		AND OTH_INF = #{othInf}
+	</if>
+	<if test="birthPlace != null and birthPlace !=''">
+		AND BIRTH_PLACE = #{birthPlace}
+	</if>
+	<if test="vipCode != null and vipCode !=''">
+		AND VIP_CODE = #{vipCode}
+	</if>
+	<if test="vipNo != null and vipNo !=''">
+		AND VIP_NO = #{vipNo}
+	</if>
+	<if test="rshpCustFlag != null and rshpCustFlag !=''">
+		AND RSHP_CUST_FLAG = #{rshpCustFlag}
+	</if>
+	<if test="resContry != null and resContry !=''">
+		AND RES_CONTRY = #{resContry}
+	</if>
+	<if test="ctctName != null and ctctName !=''">
+		AND CTCT_NAME = #{ctctName}
+	</if>
+	<if test="ctctTel != null and ctctTel !=''">
+		AND CTCT_TEL = #{ctctTel}
+	</if>
+	<if test="writeOffDate != null and writeOffDate !=''">
+		AND WRITE_OFF_DATE = #{writeOffDate}
+	</if>
+	<if test="miInf != null and miInf !=''">
+		AND MI_INF = #{miInf}
+	</if>
+	<if test="authPerson != null and authPerson !=''">
+		AND AUTH_PERSON = #{authPerson}
+	</if>
+	<if test="leglRptvIdType != null and leglRptvIdType !=''">
+		AND LEGL_RPTV_ID_TYPE = #{leglRptvIdType}
+	</if>
+	<if test="leglRptvIdNo != null and leglRptvIdNo !=''">
+		AND LEGL_RPTV_ID_NO = #{leglRptvIdNo}
+	</if>
+	<if test="cmopSize != null and cmopSize !=''">
+		AND CMOP_SIZE = #{cmopSize}
+	</if>
+	<if test="groupFlag != null and groupFlag !=''">
+		AND GROUP_FLAG = #{groupFlag}
+	</if>
+	<if test="annuityDate != null and annuityDate !=''">
+		AND ANNUITY_DATE = #{annuityDate}
+	</if>
+	<if test="annuSuppDate != null and annuSuppDate !=''">
+		AND ANNU_SUPP_DATE = #{annuSuppDate}
+	</if>
+	<if test="annuTrustee != null and annuTrustee !=''">
+		AND ANNU_TRUSTEE = #{annuTrustee}
+	</if>
+	<if test="annuTrustor != null and annuTrustor !=''">
+		AND ANNU_TRUSTOR = #{annuTrustor}
+	</if>
+	<if test="annuityMngName != null and annuityMngName !=''">
+		AND ANNUITY_MNG_NAME = #{annuityMngName}
+	</if>
+	<if test="alias != null and alias !=''">
+		AND ALIAS = #{alias}
+	</if>
+	<if test="frgnName != null and frgnName !=''">
+		AND FRGN_NAME = #{frgnName}
+	</if>
+		<if test="custLevel != null">
+			AND CUST_LEVEL = #{custLevel}
+		</if>
+	<if test="fxBureauCode != null and fxBureauCode !=''">
+		AND FX_BUREAU_CODE = #{fxBureauCode}
+	</if>
+		<if test="leglRptvExpdt != null">
+			AND LEGL_RPTV_EXPDT = #{leglRptvExpdt}
+		</if>
+	<if test="leglRptvPhone != null and leglRptvPhone !=''">
+		AND LEGL_RPTV_PHONE = #{leglRptvPhone}
+	</if>
+	<if test="shareHoldPerson != null and shareHoldPerson !=''">
+		AND SHARE_HOLD_PERSON = #{shareHoldPerson}
+	</if>
+	<if test="sharePerIdty != null and sharePerIdty !=''">
+		AND SHARE_PER_IDTY = #{sharePerIdty}
+	</if>
+	<if test="sharePerIdnum != null and sharePerIdnum !=''">
+		AND SHARE_PER_IDNUM = #{sharePerIdnum}
+	</if>
+		<if test="shareIdExpdt != null">
+			AND SHARE_ID_EXPDT = #{shareIdExpdt}
+		</if>
+	<if test="sharePerPhone != null and sharePerPhone !=''">
+		AND SHARE_PER_PHONE = #{sharePerPhone}
+	</if>
+	<if test="companyName != null and companyName !=''">
+		AND COMPANY_NAME = #{companyName}
+	</if>
+	<if test="companyNature != null and companyNature !=''">
+		AND COMPANY_NATURE = #{companyNature}
+	</if>
+	<if test="namePinyin != null and namePinyin !=''">
+		AND NAME_PINYIN = #{namePinyin}
+	</if>
+	<if test="national != null and national !=''">
+		AND NATIONAL = #{national}
+	</if>
+	<if test="reservedPhone != null and reservedPhone !=''">
+		AND RESERVED_PHONE = #{reservedPhone}
+	</if>
+	<if test="accountsInumber != null and accountsInumber !=''">
+		AND ACCOUNTS_I_NUMBER = #{accountsInumber}
+	</if>
+	<if test="isPayrollCil != null and isPayrollCil !=''">
+		AND IS_PAYROLL_CIL = #{isPayrollCil}
+	</if>
+	<if test="lastMaintDate != null and lastMaintDate !=''">
+		AND LAST_MAINT_DATE = #{lastMaintDate}
+	</if>
+	<if test="lastMaintStat != null and lastMaintStat !=''">
+		AND LAST_MAINT_STAT = #{lastMaintStat}
+	</if>
+			</where>
+			</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_BcsCumi" parameterType="com.beebank.monitor.entity.BcsCumi">
+		SELECT
+		<include refid="columns" />
+		FROM BCS_CUMI
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM BCS_CUMI
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_BcsCumi" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM BCS_CUMI
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+	<!-- 查询执行区间记录的指定字段 -->
+	<select id="listCumi" resultMap="RM_BcsCumi" parameterType="int">
+		SELECT CUST_NO, SHARE_PER_IDNUM,SHARE_HOLD_PERSON,SHARE_PER_IDTY FROM
+		(SELECT
+		ROWNUMBER() OVER(order by CUST_NO) RN,
+		CUST_NO, SHARE_PER_IDNUM,SHARE_HOLD_PERSON,SHARE_PER_IDTY
+		FROM BCS_CUMI
+		) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+	<!--	删除所有数据-->
+	<delete id="deleteAll" >
+	   TRUNCATE TABLE BCS_CUMI immediate
+-- 		DELETE FROM BCS_CUMI
+	</delete>
+</mapper>

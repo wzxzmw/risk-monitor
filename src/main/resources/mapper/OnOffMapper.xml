@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.beebank.monitor.dao.OnOffDao">
+
+	<resultMap id="RM_OnOff" type="com.beebank.monitor.entity.OnOff">
+        <result property="channelName" column="CHANNEL_NAME"/>
+        <result property="channelFullName" column="CHANNEL_FULL_NAME"/>
+        <result property="channelStatus" column="CHANNEL_STATUS"/>
+        <result property="updateTime" column="UPDATE_TIME"/>
+        <result property="updateReason" column="UPDATE_REASON"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	    <![CDATA[
+		CHANNEL_NAME,CHANNEL_FULL_NAME,CHANNEL_STATUS,UPDATE_TIME,UPDATE_REASON
+	    ]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+	    <![CDATA[
+	        INSERT INTO ON_OFF ( 
+	        	CHANNEL_NAME ,
+	        	CHANNEL_FULL_NAME ,
+	        	CHANNEL_STATUS ,
+	        	UPDATE_REASON 
+	        ) VALUES (
+	        	#{channelName} ,
+	        	#{channelFullName} ,
+	        	#{channelStatus} ,
+	        	#{updateReason} 
+	        )
+	    ]]>
+	</insert>
+	
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	    <![CDATA[
+	        INSERT INTO ON_OFF (
+	        		CHANNEL_NAME ,
+	        		CHANNEL_FULL_NAME ,
+	        		CHANNEL_STATUS ,
+	        		UPDATE_REASON 
+	        ) VALUES 
+	         ]]>
+	        <foreach item="item" collection="list"   separator=",">
+	        	(
+					#{item.channelName} ,
+					#{item.channelFullName} ,
+					#{item.channelStatus} ,
+					#{item.updateReason} 
+	        	)
+			</foreach>
+	   
+	</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+		<set>
+			<if test="channelName != null and channelName != ''">
+				CHANNEL_NAME = #{channelName} ,
+			</if>
+			<if test="channelFullName != null and channelFullName != ''">
+				CHANNEL_FULL_NAME = #{channelFullName} ,
+			</if>
+			<if test="channelStatus != null and channelStatus != ''">
+				CHANNEL_STATUS = #{channelStatus} ,
+			</if>
+			<if test="updateTime != null">
+				UPDATE_TIME = #{updateTime} ,
+			</if>
+			<if test="updateReason != null and updateReason != ''">
+				UPDATE_REASON = #{updateReason} 
+			</if>
+		</set>
+	</sql>
+	
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+		UPDATE ON_OFF
+		<include refid="update_sql" />
+		WHERE
+		CHANNEL_NAME = #{channelName}
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+    	<![CDATA[
+        	DELETE FROM ON_OFF 
+        	WHERE
+        		CHANNEL_NAME = #{id}
+    	]]>
+	</delete>
+	
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+        DELETE FROM ON_OFF 
+        WHERE CHANNEL_NAME IN
+        <foreach item="ids" collection="list" open="(" separator="," close=")">
+			#{ids}
+		</foreach>
+    </delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_OnOff">
+		SELECT
+		<include refid="columns" />
+		FROM ON_OFF
+		WHERE
+		CHANNEL_NAME = #{id}
+	</select>
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{userName},'%')) -->
+	<sql id="findPage_where">
+		<where>
+
+				<if test="channelName != null and channelName !=''">
+					AND CHANNEL_NAME = #{channelName}
+				</if>
+				<if test="channelFullName != null and channelFullName !=''">
+					AND CHANNEL_FULL_NAME = #{channelFullName}
+				</if>
+				<if test="channelStatus != null and channelStatus !=''">
+					AND CHANNEL_STATUS = #{channelStatus}
+				</if>
+				<if test="updateTimeBegin != null">
+					AND UPDATE_TIME &gt;= #{updateTimeBegin}
+				</if>
+				<if test="updateTimeEnd != null">
+					AND UPDATE_TIME &lt;= #{updateTimeEnd}
+				</if>
+				<if test="updateReason != null and updateReason !=''">
+					AND UPDATE_REASON = #{updateReason}
+				</if>
+		</where>
+	</sql>
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long">
+		SELECT COUNT(1)
+		FROM ON_OFF
+		<include refid="findPage_where" />
+	</select>
+
+	<select id="listByObj" resultMap="RM_OnOff" parameterType="com.beebank.monitor.entity.OnOff">
+		SELECT
+		<include refid="columns" />
+		FROM ON_OFF
+		<include refid="findPage_where" />
+	</select>
+</mapper>

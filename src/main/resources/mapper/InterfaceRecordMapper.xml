@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.InterfaceRecordDao">
+
+	<resultMap id="RM_InterfaceRecord" type="com.beebank.monitor.entity.InterfaceRecord">
+		<result property="id" column="id"/>
+		<result property="branchId" column="branchId"/>
+		<result property="ownref" column="ownref"/>
+		<result property="own" column="own"/>
+		<result property="requestMessage" column="requestMessage"/>
+		<result property="responseMessage" column="responseMessage"/>
+		<result property="requestTime" column="requestTime"/>
+		<result property="status" column="status"/>
+		<result property="rlevel" column="rlevel"/>
+		<result property="useTime" column="useTime"/>
+		<result property="regDate" column="regDate"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			id,branchId,ownref,own,requestMessage,responseMessage,requestTime,status,rlevel,useTime,regDate
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+	<![CDATA[
+				INSERT INTO interface_record (
+					branchId ,
+					ownref ,
+					own ,
+					requestMessage ,
+					responseMessage ,
+					requestTime ,
+					status ,
+					rlevel ,
+					useTime
+				) VALUES (
+					#{branchId} ,
+					#{ownref} ,
+					#{own} ,
+					#{requestMessage} ,
+					#{responseMessage} ,
+					#{requestTime} ,
+					#{status} ,
+					#{rlevel} ,
+					#{useTime}
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+		<![CDATA[
+				INSERT INTO interface_record (
+						id ,
+						branchId ,
+						ownref ,
+						own ,
+						requestMessage ,
+						responseMessage ,
+						requestTime ,
+						status ,
+						rlevel ,
+						useTime
+				) VALUES
+				 ]]>
+		<foreach item="item" collection="list"   separator=",">
+			(
+			#{item.id} ,
+			#{item.branchId} ,
+			#{item.ownref} ,
+			#{item.own} ,
+			#{item.requestMessage} ,
+			#{item.responseMessage} ,
+			#{item.requestTime} ,
+			#{item.status} ,
+			#{item.rlevel} ,
+			#{item.useTime}
+			)
+		</foreach>
+
+	</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+		<set>
+			<if test="branchId != null and branchId != ''">
+				branchId = #{branchId} ,
+			</if>
+			<if test="ownref != null and ownref != ''">
+				ownref = #{ownref} ,
+			</if>
+			<if test="own != null and own != ''">
+				own = #{own} ,
+			</if>
+			<if test="requestMessage != null and requestMessage != ''">
+				requestMessage = #{requestMessage} ,
+			</if>
+			<if test="responseMessage != null and responseMessage != ''">
+				responseMessage = #{responseMessage} ,
+			</if>
+			<if test="requestTime != null and requestTime != ''">
+				requestTime = #{requestTime} ,
+			</if>
+			<if test="status != null and status != ''">
+				status = #{status} ,
+			</if>
+			<if test="rlevel != null and rlevel != ''">
+				rlevel = #{rlevel} ,
+			</if>
+			<if test="useTime != null">
+				useTime = #{useTime} ,
+			</if>
+			<if test="regDate != null and regDate != ''">
+				regDate = #{regDate}
+			</if>
+		</set>
+	</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+		UPDATE interface_record
+		<include refid="update_sql" />
+		WHERE
+		id = #{id}
+	</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE interface_record
+		<include refid="update_sql" />
+		WHERE
+		id IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+			#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM interface_record
+				WHERE
+					id = #{id}
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM interface_record
+		WHERE id IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+			#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_InterfaceRecord">
+		SELECT
+		<include refid="columns" />
+		FROM interface_record
+		WHERE
+		id = #{id}
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+		<where>
+			<if test="id != null">
+				AND id = #{id}
+			</if>
+			<if test="branchId != null and branchId !=''">
+				AND branchId = #{branchId}
+			</if>
+			<if test="ownref != null and ownref !=''">
+				AND ownref = #{ownref}
+			</if>
+			<if test="own != null and own !=''">
+				AND own = #{own}
+			</if>
+			<if test="requestMessage != null and requestMessage !=''">
+				AND requestMessage = #{requestMessage}
+			</if>
+			<if test="responseMessage != null and responseMessage !=''">
+				AND responseMessage = #{responseMessage}
+			</if>
+			<if test="requestTime != null and requestTime !=''">
+				AND requestTime = #{requestTime}
+			</if>
+			<if test="status != null and status !=''">
+				AND status = #{status}
+			</if>
+			<if test="rlevel != null and rlevel !=''">
+				AND rlevel = #{rlevel}
+			</if>
+			<if test="useTime != null ">
+				AND useTime = #{useTime}
+			</if>
+			<if test="regDate != null and regDate !=''">
+				AND regDate = #{regDate}
+			</if>
+		</where>
+	</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_InterfaceRecord" parameterType="com.beebank.monitor.entity.InterfaceRecord">
+		SELECT
+		<include refid="columns" />
+		FROM interface_record
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM interface_record
+		<include refid="findPage_where" />
+	</select>
+
+</mapper>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+		<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beebank.monitor.dao.BcsCbnfDao">
+
+	<resultMap id="RM_BcsCbnf" type="com.beebank.monitor.entity.BcsCbnf">
+		<result property="instNo" column="INST_NO"/>
+		<result property="custNo" column="CUST_NO"/>
+		<result property="bnfName1" column="BNF_NAME1"/>
+		<result property="bnfIdType1" column="BNF_ID_TYPE1"/>
+		<result property="bnfIdNo1" column="BNF_ID_NO1"/>
+		<result property="bnfExpdate1" column="BNF_EXPDATE1"/>
+		<result property="bnfAddr1" column="BNF_ADDR1"/>
+		<result property="bnfName2" column="BNF_NAME2"/>
+		<result property="bnfIdType2" column="BNF_ID_TYPE2"/>
+		<result property="bnfIdNo2" column="BNF_ID_NO2"/>
+		<result property="bnfExpdate2" column="BNF_EXPDATE2"/>
+		<result property="bnfAddr2" column="BNF_ADDR2"/>
+		<result property="bnfName3" column="BNF_NAME3"/>
+		<result property="bnfIdType3" column="BNF_ID_TYPE3"/>
+		<result property="bnfIdNo3" column="BNF_ID_NO3"/>
+		<result property="bnfExpdate3" column="BNF_EXPDATE3"/>
+		<result property="bnfAddr3" column="BNF_ADDR3"/>
+		<result property="bnfName4" column="BNF_NAME4"/>
+		<result property="bnfIdType4" column="BNF_ID_TYPE4"/>
+		<result property="bnfIdNo4" column="BNF_ID_NO4"/>
+		<result property="bnfExpdate4" column="BNF_EXPDATE4"/>
+		<result property="bnfAddr4" column="BNF_ADDR4"/>
+		<result property="bnfLastMdate" column="BNF_LAST_M_DATE"/>
+		<result property="bnfLastMtell" column="BNF_LAST_M_TELL"/>
+		<result property="bnfLastMbrno" column="BNF_LAST_M_BRNO"/>
+		<result property="remark" column="REMARK"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="columns">
+	<![CDATA[
+			INST_NO,CUST_NO,BNF_NAME1,BNF_ID_TYPE1,BNF_ID_NO1,BNF_EXPDATE1,BNF_ADDR1,BNF_NAME2,BNF_ID_TYPE2,BNF_ID_NO2,BNF_EXPDATE2,BNF_ADDR2,BNF_NAME3,BNF_ID_TYPE3,BNF_ID_NO3,BNF_EXPDATE3,BNF_ADDR3,BNF_NAME4,BNF_ID_TYPE4,BNF_ID_NO4,BNF_EXPDATE4,BNF_ADDR4,BNF_LAST_M_DATE,BNF_LAST_M_TELL,BNF_LAST_M_BRNO,REMARK
+			]]>
+	</sql>
+
+	<!--保存 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="instNo">
+	<![CDATA[
+				INSERT INTO BCS_CBNF (
+					INST_NO ,
+					CUST_NO ,
+					BNF_NAME1 ,
+					BNF_ID_TYPE1 ,
+					BNF_ID_NO1 ,
+					BNF_EXPDATE1 ,
+					BNF_ADDR1 ,
+					BNF_NAME2 ,
+					BNF_ID_TYPE2 ,
+					BNF_ID_NO2 ,
+					BNF_EXPDATE2 ,
+					BNF_ADDR2 ,
+					BNF_NAME3 ,
+					BNF_ID_TYPE3 ,
+					BNF_ID_NO3 ,
+					BNF_EXPDATE3 ,
+					BNF_ADDR3 ,
+					BNF_NAME4 ,
+					BNF_ID_TYPE4 ,
+					BNF_ID_NO4 ,
+					BNF_EXPDATE4 ,
+					BNF_ADDR4 ,
+					BNF_LAST_M_DATE ,
+					BNF_LAST_M_TELL ,
+					BNF_LAST_M_BRNO ,
+					REMARK 
+				) VALUES (
+					#{instNo} ,
+					#{custNo} ,
+					#{bnfName1} ,
+					#{bnfIdType1} ,
+					#{bnfIdNo1} ,
+					#{bnfExpdate1} ,
+					#{bnfAddr1} ,
+					#{bnfName2} ,
+					#{bnfIdType2} ,
+					#{bnfIdNo2} ,
+					#{bnfExpdate2} ,
+					#{bnfAddr2} ,
+					#{bnfName3} ,
+					#{bnfIdType3} ,
+					#{bnfIdNo3} ,
+					#{bnfExpdate3} ,
+					#{bnfAddr3} ,
+					#{bnfName4} ,
+					#{bnfIdType4} ,
+					#{bnfIdNo4} ,
+					#{bnfExpdate4} ,
+					#{bnfAddr4} ,
+					#{bnfLastMdate} ,
+					#{bnfLastMtell} ,
+					#{bnfLastMbrno} ,
+					#{remark} 
+				)
+			]]>
+	</insert>
+
+	<!-- 批量保存 -->
+	<insert id="batchInsert">
+	<![CDATA[
+				INSERT INTO BCS_CBNF (
+						INST_NO ,
+						CUST_NO ,
+						BNF_NAME1 ,
+						BNF_ID_TYPE1 ,
+						BNF_ID_NO1 ,
+						BNF_EXPDATE1 ,
+						BNF_ADDR1 ,
+						BNF_NAME2 ,
+						BNF_ID_TYPE2 ,
+						BNF_ID_NO2 ,
+						BNF_EXPDATE2 ,
+						BNF_ADDR2 ,
+						BNF_NAME3 ,
+						BNF_ID_TYPE3 ,
+						BNF_ID_NO3 ,
+						BNF_EXPDATE3 ,
+						BNF_ADDR3 ,
+						BNF_NAME4 ,
+						BNF_ID_TYPE4 ,
+						BNF_ID_NO4 ,
+						BNF_EXPDATE4 ,
+						BNF_ADDR4 ,
+						BNF_LAST_M_DATE ,
+						BNF_LAST_M_TELL ,
+						BNF_LAST_M_BRNO ,
+						REMARK 
+				) VALUES
+				 ]]>
+	<foreach item="item" collection="list"   separator=",">
+		(
+	#{item.instNo} ,
+	#{item.custNo} ,
+	#{item.bnfName1} ,
+	#{item.bnfIdType1} ,
+	#{item.bnfIdNo1} ,
+	#{item.bnfExpdate1} ,
+	#{item.bnfAddr1} ,
+	#{item.bnfName2} ,
+	#{item.bnfIdType2} ,
+	#{item.bnfIdNo2} ,
+	#{item.bnfExpdate2} ,
+	#{item.bnfAddr2} ,
+	#{item.bnfName3} ,
+	#{item.bnfIdType3} ,
+	#{item.bnfIdNo3} ,
+	#{item.bnfExpdate3} ,
+	#{item.bnfAddr3} ,
+	#{item.bnfName4} ,
+	#{item.bnfIdType4} ,
+	#{item.bnfIdNo4} ,
+	#{item.bnfExpdate4} ,
+	#{item.bnfAddr4} ,
+	#{item.bnfLastMdate} ,
+	#{item.bnfLastMtell} ,
+	#{item.bnfLastMbrno} ,
+	#{item.remark} 
+			)
+			</foreach>
+
+			</insert>
+
+	<!-- update 条件组合 -->
+	<sql id="update_sql">
+	<set>
+	<if test="bnfName1 != null and bnfName1 != ''">
+	BNF_NAME1 = #{bnfName1} ,
+			</if>
+	<if test="bnfIdType1 != null and bnfIdType1 != ''">
+	BNF_ID_TYPE1 = #{bnfIdType1} ,
+			</if>
+	<if test="bnfIdNo1 != null and bnfIdNo1 != ''">
+	BNF_ID_NO1 = #{bnfIdNo1} ,
+			</if>
+	<if test="bnfExpdate1 != null and bnfExpdate1 != ''">
+	BNF_EXPDATE1 = #{bnfExpdate1} ,
+			</if>
+	<if test="bnfAddr1 != null and bnfAddr1 != ''">
+	BNF_ADDR1 = #{bnfAddr1} ,
+			</if>
+	<if test="bnfName2 != null and bnfName2 != ''">
+	BNF_NAME2 = #{bnfName2} ,
+			</if>
+	<if test="bnfIdType2 != null and bnfIdType2 != ''">
+	BNF_ID_TYPE2 = #{bnfIdType2} ,
+			</if>
+	<if test="bnfIdNo2 != null and bnfIdNo2 != ''">
+	BNF_ID_NO2 = #{bnfIdNo2} ,
+			</if>
+	<if test="bnfExpdate2 != null and bnfExpdate2 != ''">
+	BNF_EXPDATE2 = #{bnfExpdate2} ,
+			</if>
+	<if test="bnfAddr2 != null and bnfAddr2 != ''">
+	BNF_ADDR2 = #{bnfAddr2} ,
+			</if>
+	<if test="bnfName3 != null and bnfName3 != ''">
+	BNF_NAME3 = #{bnfName3} ,
+			</if>
+	<if test="bnfIdType3 != null and bnfIdType3 != ''">
+	BNF_ID_TYPE3 = #{bnfIdType3} ,
+			</if>
+	<if test="bnfIdNo3 != null and bnfIdNo3 != ''">
+	BNF_ID_NO3 = #{bnfIdNo3} ,
+			</if>
+	<if test="bnfExpdate3 != null and bnfExpdate3 != ''">
+	BNF_EXPDATE3 = #{bnfExpdate3} ,
+			</if>
+	<if test="bnfAddr3 != null and bnfAddr3 != ''">
+	BNF_ADDR3 = #{bnfAddr3} ,
+			</if>
+	<if test="bnfName4 != null and bnfName4 != ''">
+	BNF_NAME4 = #{bnfName4} ,
+			</if>
+	<if test="bnfIdType4 != null and bnfIdType4 != ''">
+	BNF_ID_TYPE4 = #{bnfIdType4} ,
+			</if>
+	<if test="bnfIdNo4 != null and bnfIdNo4 != ''">
+	BNF_ID_NO4 = #{bnfIdNo4} ,
+			</if>
+	<if test="bnfExpdate4 != null and bnfExpdate4 != ''">
+	BNF_EXPDATE4 = #{bnfExpdate4} ,
+			</if>
+	<if test="bnfAddr4 != null and bnfAddr4 != ''">
+	BNF_ADDR4 = #{bnfAddr4} ,
+			</if>
+	<if test="bnfLastMdate != null and bnfLastMdate != ''">
+	BNF_LAST_M_DATE = #{bnfLastMdate} ,
+			</if>
+	<if test="bnfLastMtell != null and bnfLastMtell != ''">
+	BNF_LAST_M_TELL = #{bnfLastMtell} ,
+			</if>
+	<if test="bnfLastMbrno != null and bnfLastMbrno != ''">
+	BNF_LAST_M_BRNO = #{bnfLastMbrno} ,
+			</if>
+	<if test="remark != null and remark != ''">
+	REMARK = #{remark} 
+			</if>
+			</set>
+			</sql>
+
+	<!-- 修改 -->
+	<update id="updateByPrimaryKey">
+	UPDATE BCS_CBNF
+	<include refid="update_sql" />
+	WHERE
+	INST_NO = #{instNo}  AND
+	CUST_NO = #{custNo} 
+			</update>
+
+	<!-- 修改 -->
+	<update id="batchUpdateByIds">
+		UPDATE BCS_CBNF
+	<include refid="update_sql" />
+		WHERE
+	INST_NOCUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</update>
+
+	<!-- 根据ID删除 -->
+	<delete id="deleteByPrimaryKey">
+	<![CDATA[
+				DELETE FROM BCS_CBNF
+				WHERE
+					INST_NO = #{id}  AND 
+					CUST_NO = #{id} 
+			]]>
+	</delete>
+
+	<!-- 批量删除 -->
+	<delete id="batchDeleteByIds">
+		DELETE FROM BCS_CBNF
+		WHERE INST_NO CUST_NO IN
+		<foreach item="ids" collection="list" open="(" separator="," close=")">
+		#{ids}
+		</foreach>
+	</delete>
+
+	<!-- selsect -->
+	<select id="selectByPrimaryKey" resultMap="RM_BcsCbnf">
+		SELECT
+	<include refid="columns" />
+		FROM BCS_CBNF
+		WHERE
+		INST_NO = #{id}  AND 
+		CUST_NO = #{id} 
+	</select>
+
+
+
+
+
+	<!-- 模糊查询这样： 字段名 LIKE CONCAT('%',CONCAT(#{model.userName},'%')) -->
+	<sql id="findPage_where">
+	<where>
+	<if test="instNo != null and instNo !=''">
+		AND INST_NO = #{instNo}
+	</if>
+	<if test="custNo != null and custNo !=''">
+		AND CUST_NO = #{custNo}
+	</if>
+	<if test="bnfName1 != null and bnfName1 !=''">
+		AND BNF_NAME1 = #{bnfName1}
+	</if>
+	<if test="bnfIdType1 != null and bnfIdType1 !=''">
+		AND BNF_ID_TYPE1 = #{bnfIdType1}
+	</if>
+	<if test="bnfIdNo1 != null and bnfIdNo1 !=''">
+		AND BNF_ID_NO1 = #{bnfIdNo1}
+	</if>
+	<if test="bnfExpdate1 != null and bnfExpdate1 !=''">
+		AND BNF_EXPDATE1 = #{bnfExpdate1}
+	</if>
+	<if test="bnfAddr1 != null and bnfAddr1 !=''">
+		AND BNF_ADDR1 = #{bnfAddr1}
+	</if>
+	<if test="bnfName2 != null and bnfName2 !=''">
+		AND BNF_NAME2 = #{bnfName2}
+	</if>
+	<if test="bnfIdType2 != null and bnfIdType2 !=''">
+		AND BNF_ID_TYPE2 = #{bnfIdType2}
+	</if>
+	<if test="bnfIdNo2 != null and bnfIdNo2 !=''">
+		AND BNF_ID_NO2 = #{bnfIdNo2}
+	</if>
+	<if test="bnfExpdate2 != null and bnfExpdate2 !=''">
+		AND BNF_EXPDATE2 = #{bnfExpdate2}
+	</if>
+	<if test="bnfAddr2 != null and bnfAddr2 !=''">
+		AND BNF_ADDR2 = #{bnfAddr2}
+	</if>
+	<if test="bnfName3 != null and bnfName3 !=''">
+		AND BNF_NAME3 = #{bnfName3}
+	</if>
+	<if test="bnfIdType3 != null and bnfIdType3 !=''">
+		AND BNF_ID_TYPE3 = #{bnfIdType3}
+	</if>
+	<if test="bnfIdNo3 != null and bnfIdNo3 !=''">
+		AND BNF_ID_NO3 = #{bnfIdNo3}
+	</if>
+	<if test="bnfExpdate3 != null and bnfExpdate3 !=''">
+		AND BNF_EXPDATE3 = #{bnfExpdate3}
+	</if>
+	<if test="bnfAddr3 != null and bnfAddr3 !=''">
+		AND BNF_ADDR3 = #{bnfAddr3}
+	</if>
+	<if test="bnfName4 != null and bnfName4 !=''">
+		AND BNF_NAME4 = #{bnfName4}
+	</if>
+	<if test="bnfIdType4 != null and bnfIdType4 !=''">
+		AND BNF_ID_TYPE4 = #{bnfIdType4}
+	</if>
+	<if test="bnfIdNo4 != null and bnfIdNo4 !=''">
+		AND BNF_ID_NO4 = #{bnfIdNo4}
+	</if>
+	<if test="bnfExpdate4 != null and bnfExpdate4 !=''">
+		AND BNF_EXPDATE4 = #{bnfExpdate4}
+	</if>
+	<if test="bnfAddr4 != null and bnfAddr4 !=''">
+		AND BNF_ADDR4 = #{bnfAddr4}
+	</if>
+	<if test="bnfLastMdate != null and bnfLastMdate !=''">
+		AND BNF_LAST_M_DATE = #{bnfLastMdate}
+	</if>
+	<if test="bnfLastMtell != null and bnfLastMtell !=''">
+		AND BNF_LAST_M_TELL = #{bnfLastMtell}
+	</if>
+	<if test="bnfLastMbrno != null and bnfLastMbrno !=''">
+		AND BNF_LAST_M_BRNO = #{bnfLastMbrno}
+	</if>
+	<if test="remark != null and remark !=''">
+		AND REMARK = #{remark}
+	</if>
+			</where>
+			</sql>
+
+	<!-- selsect by obj -->
+	<select id="listByObj" resultMap="RM_BcsCbnf" parameterType="com.beebank.monitor.entity.BcsCbnf">
+		SELECT
+		<include refid="columns" />
+		FROM BCS_CBNF
+		<include refid="findPage_where" />
+	</select>
+
+
+	<!-- 获取总数 -->
+	<select id="listPageCount" resultType="long" parameterType="map">
+		SELECT COUNT(1)
+		FROM BCS_CBNF
+		<include refid="findPage_where" />
+	</select>
+
+	<!-- 分页查询 -->
+	<select id="listPage" resultMap="RM_BcsCbnf" parameterType="map">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER() RN,
+		<include refid="columns" />
+		FROM BCS_CBNF
+		<include refid="findPage_where" />
+
+		<if test="sortColumns != null and sortColumns !=''">
+			ORDER BY ${sortColumns}
+		</if>) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+
+
+	<!-- 查询执行区间记录的指定字段 -->
+	<select id="listCbnf" resultMap="RM_BcsCbnf" parameterType="int">
+		SELECT <include refid="columns" /> FROM
+		(SELECT
+		ROWNUMBER() OVER(order by CUST_NO) RN,
+		<include refid="columns" />
+		FROM BCS_CBNF
+		) temp
+		<where>
+			<if test="start != null and end != null">
+				temp.RN<![CDATA[> ]]> #{start} and temp.RN <![CDATA[<= ]]> #{end}
+			</if>
+		</where>
+	</select>
+
+
+<!--	删除所有数据-->
+	<delete id="deleteAll" >
+	   TRUNCATE TABLE BCS_CBNF immediate
+-- 		DELETE FROM BCS_CBNF
+	</delete>
+</mapper>
